@@ -5,7 +5,10 @@ namespace NGJ2026.SO
     [CreateAssetMenu(menuName = "ScriptableObject/GameInfo", fileName = "GameInfo")]
     public class GameInfo : ScriptableObject
     {
-        public Range<float> DistanceFromPlayer;
+        [Header("Insects")]
+        public float MinDistanceWithPlayer;
+        public Range<float> DelayBeforeInsectRestStart;
+        public Range<float> DelayBeforeInsectRestEnd;
     }
 
     [System.Serializable]

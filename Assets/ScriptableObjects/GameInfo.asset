@@ -12,6 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9b1881fe66918748a1ce48544162528, type: 3}
   m_Name: GameInfo
   m_EditorClassIdentifier: Assembly-CSharp::NGJ2026.SO.GameInfo
-  DistanceFromPlayer:
-    Min: 1.5
-    Max: 5
+  MinDistanceWithPlayer: 1.5
+  DelayBeforeInsectRestStart:
+    Min: 2
+    Max: 4
+  DelayBeforeInsectRestEnd:
+    Min: 0.5
+    Max: 1
