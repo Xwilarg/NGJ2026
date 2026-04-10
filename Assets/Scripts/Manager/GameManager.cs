@@ -1,5 +1,6 @@
 ﻿using NGJ2026.SO;
 using Sketch.Common;
+using Sketch.Translation;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -63,7 +64,7 @@ namespace NGJ2026.Manager
             if (_statDisplay == null) return;
 
             var remaining = Info.GameDuration - _gameTimer.TimerClamped;
-            _statDisplay.text = $"Timer: {Mathf.FloorToInt(remaining / 60f):00}:{remaining % 60:00}\nScore: {InsectManager.Instance.ButterflyCaught}";
+            _statDisplay.text = $"{Translate.Instance.Tr("stat_timer", Mathf.FloorToInt(remaining / 60f).ToString("00"), (remaining % 60).ToString("00"))}\n{Translate.Instance.Tr("stat_score", InsectManager.Instance.ButterflyCaught.ToString())}";
         }
     }
 }
