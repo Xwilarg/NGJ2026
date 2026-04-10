@@ -38,7 +38,7 @@ namespace NGJ2026.Manager
                 foreach (var insect in InsectManager.Instance.Insects)
                 {
                     Gizmos.color = insect.State == Insect.BehaviorState.Resting ? Color.red : Color.blue;
-                    Gizmos.DrawSphere(insect.transform.position, insect.transform.localScale.x);
+                    Gizmos.DrawWireSphere(insect.transform.position, insect.transform.localScale.x * insect.GetComponent<SphereCollider>().radius);
                 }
             }
 

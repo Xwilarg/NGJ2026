@@ -19,7 +19,7 @@ namespace NGJ2026.Manager
         private IEnumerable<Transform> _flowers;
 
         public IEnumerable<Transform> GetAllFlowers() => _flowers;
-        public IEnumerable<Transform> GetPossibleFlowers(Vector2 myPos)
+        public IEnumerable<Transform> GetPossibleFlowers(Vector2 myPos) // TODO: Doesn't seem to work properly (return all) but not prioritary
         {
             var minPlayerDist = GameManager.Instance.Info.MinDistanceWithPlayer;
             return _flowers.Where(f => IsRayInterceptingCircle(myPos, new Vector2(f.position.x, f.position.z), minPlayerDist));
