@@ -1,4 +1,5 @@
 ﻿using NGJ2026.SO;
+using System.Linq;
 using UnityEngine;
 
 namespace NGJ2026.Manager
@@ -26,6 +27,11 @@ namespace NGJ2026.Manager
             {
                 _debugUI.SetActive(false);
             }
+        }
+
+        public void CatchOldestButterfly()
+        {
+            InsectManager.Instance.CatchButterfly(InsectManager.Instance.Insects.First());
         }
 
         private void OnDrawGizmos()

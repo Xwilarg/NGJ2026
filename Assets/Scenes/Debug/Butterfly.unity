@@ -338,7 +338,7 @@ GameObject:
   - component: {fileID: 882189500}
   - component: {fileID: 882189501}
   m_Layer: 5
-  m_Name: DebugUI
+  m_Name: Buttons
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -702,7 +702,7 @@ GameObject:
   - component: {fileID: 1551374593}
   - component: {fileID: 1551374592}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: DebugCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -784,7 +784,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 882189500}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1825633041}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -853,6 +853,22 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3572974575184730636, guid: 8b4d6b592fafb944198291ee8f355a9b, type: 3}
   m_PrefabInstance: {fileID: 1771736337}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &1825633041 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3365739332912341795, guid: fe25ca72043a52144804561ea8d0f492, type: 3}
+  m_PrefabInstance: {fileID: 2935695060765764353}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1825633043 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6814962906399091117, guid: fe25ca72043a52144804561ea8d0f492, type: 3}
+  m_PrefabInstance: {fileID: 2935695060765764353}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d3843552d9926744b522380f16b4857, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::NGJ2026.Manager.DebugManager
 --- !u!1 &1839833755
 GameObject:
   m_ObjectHideFlags: 0
@@ -1072,7 +1088,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1940219592}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1825633043}
+        m_TargetAssemblyTypeName: NGJ2026.Manager.DebugManager, Assembly-CSharp
+        m_MethodName: CatchOldestButterfly
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1940219592
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1223,10 +1251,13 @@ PrefabInstance:
     - target: {fileID: 6814962906399091117, guid: fe25ca72043a52144804561ea8d0f492, type: 3}
       propertyPath: _debugUI
       value: 
-      objectReference: {fileID: 882189499}
+      objectReference: {fileID: 1551374591}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 3365739332912341795, guid: fe25ca72043a52144804561ea8d0f492, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1551374595}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fe25ca72043a52144804561ea8d0f492, type: 3}
 --- !u!1001 &9017644489459772319
@@ -1294,6 +1325,5 @@ SceneRoots:
   - {fileID: 1267018070}
   - {fileID: 2935695060765764353}
   - {fileID: 139191250555665637}
-  - {fileID: 1551374595}
   - {fileID: 383027675}
   - {fileID: 1472373851}

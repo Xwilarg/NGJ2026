@@ -1,3 +1,5 @@
+using NGJ2026.Insect;
+using NGJ2026.Manager;
 using UnityEngine;
 
 namespace NGJ2026.Player
@@ -6,7 +8,10 @@ namespace NGJ2026.Player
     {
         private void OnTriggerEnter(Collider other)
         {
-            Debug.Log("butterfly caught");
+            if (other.TryGetComponent<Butterfly>(out var b))
+            {
+                InsectManager.Instance.CatchButterfly(b);
+            }
         }
     }
 }
