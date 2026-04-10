@@ -8,7 +8,7 @@ namespace NGJ2026.Insect
 {
     public class Butterfly : MonoBehaviour
     {
-        private Vector2 _startPos;
+        private Vector3 _startPos;
         private Vector3 _target;
 
         private Timer _behaviorTimer;
@@ -72,7 +72,7 @@ namespace NGJ2026.Insect
             _target = arr[Random.Range(0, arr.Length)].position;
 
             _startPos = transform.position;
-            _behaviorTimer.Start(Vector3.Distance(_startPos, _target));
+            _behaviorTimer.Start(Vector3.Distance(_startPos, _target) * GameManager.Instance.Info.FlyingSpeed);
         }
 
         private void Update()
@@ -82,6 +82,12 @@ namespace NGJ2026.Insect
             if (State == BehaviorState.Resting) return;
 
             transform.position = Vector3.Slerp(_startPos, _target, _behaviorTimer.TimerClamped01);
+        }
+
+        private void OnDrawGizmos()
+        {
+            Gizmos.color = Color.blue;
+            Gizmos.DrawLine(transform.position, _target);
         }
     }
 
