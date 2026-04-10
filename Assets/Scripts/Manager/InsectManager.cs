@@ -69,8 +69,7 @@ namespace NGJ2026.Manager
             var go = Instantiate(_butterflyPrefab);
             _insects.Add(go.GetComponent<Butterfly>());
 
-            var randPos = Random.onUnitCircle * GameManager.Instance.Info.MinDistanceWithPlayer;
-            go.transform.position = new(randPos.x, 1f, randPos.y);
+            go.transform.position = LevelManager.Instance.GetRandomSpawnPoint().position;
         }
     }
 }
