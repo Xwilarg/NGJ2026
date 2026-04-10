@@ -13,9 +13,7 @@ MonoBehaviour:
   m_Name: GameInfo
   m_EditorClassIdentifier: Assembly-CSharp::NGJ2026.SO.GameInfo
   MinDistanceWithPlayer: 1.5
-  DelayBeforeInsectRestStart:
-    Min: 2
-    Max: 4
   DelayBeforeInsectRestEnd:
     Min: 0.5
     Max: 1
+  FlyingSpeed: 0.5

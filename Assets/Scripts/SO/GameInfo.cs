@@ -7,8 +7,8 @@ namespace NGJ2026.SO
     {
         [Header("Insects")]
         public float MinDistanceWithPlayer;
-        public Range<float> DelayBeforeInsectRestStart;
         public Range<float> DelayBeforeInsectRestEnd;
+        public float FlyingSpeed;
     }
 
     [System.Serializable]
