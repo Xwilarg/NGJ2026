@@ -1,18 +1,36 @@
 using NGJ2026.Manager;
 using Sketch.Common;
+using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 namespace NGJ2026.Insect
 {
     public class Butterfly : MonoBehaviour
     {
-        private float _timer;
-
-        private float _distanceWithCenter;
+        private Vector2 _startPos;
+        private Vector3 _target;
 
         private Timer _behaviorTimer;
 
-        public BehaviorState State { private set; get; } = BehaviorState.Flying;
+        private BehaviorState _state = BehaviorState.Flying;
+        public BehaviorState State
+        {
+            private set
+            {
+                _state = value;
+
+                if (State == BehaviorState.Flying)
+                {
+                    GetTarget(true);
+                }
+                else
+                {
+                    _behaviorTimer.Start(Random.Range(GameManager.Instance.Info.DelayBeforeInsectRestEnd.Min, GameManager.Instance.Info.DelayBeforeInsectRestEnd.Max));
+                }
+            }
+            get => _state;
+        }
 
         private void Awake()
         {
@@ -22,25 +40,39 @@ namespace NGJ2026.Insect
             {
                 if (State == BehaviorState.Resting) State = BehaviorState.Flying;
                 else State = BehaviorState.Resting;
-
-                ResetTimer();
             });
-            ResetTimer();
         }
 
         private void Start()
         {
-            // TODO: Calculate base _timer depending of position
-            _distanceWithCenter = new Vector2(transform.position.x, transform.position.z).magnitude;
+            GetTarget(false);
         }
 
-        public void ResetTimer()
+        public void GetTarget(bool ignorePlayer)
         {
-            _behaviorTimer.Start(
-               State == BehaviorState.Flying
-                ? Random.Range(GameManager.Instance.Info.DelayBeforeInsectRestStart.Min, GameManager.Instance.Info.DelayBeforeInsectRestStart.Max)
-                : Random.Range(GameManager.Instance.Info.DelayBeforeInsectRestEnd.Min, GameManager.Instance.Info.DelayBeforeInsectRestEnd.Max)
-            );
+            IEnumerable<Transform> possibles;
+
+            if (ignorePlayer)
+            {
+                possibles = InsectManager.Instance.GetAllFlowers();
+            }
+            else
+            {
+                possibles = InsectManager.Instance.GetPossibleFlowers(new Vector2(transform.position.x, transform.position.z));
+
+                if (!possibles.Any())
+                {
+                    Debug.LogWarning("Butterfly can't find a flower, falling back on ignoring player");
+                    GetTarget(true);
+                    return;
+                }
+            }
+
+            var arr = possibles.ToArray();
+            _target = arr[Random.Range(0, arr.Length)].position;
+
+            _startPos = transform.position;
+            _behaviorTimer.Start(Vector3.Distance(_startPos, _target));
         }
 
         private void Update()
@@ -49,13 +81,7 @@ namespace NGJ2026.Insect
 
             if (State == BehaviorState.Resting) return;
 
-            _timer += Time.deltaTime;
-
-            transform.position = new(
-                x: Mathf.Cos(_timer) * _distanceWithCenter,
-                y: 1f + Mathf.Sin(_timer),
-                z: Mathf.Sin(_timer) * _distanceWithCenter
-            );
+            transform.position = Vector3.Slerp(_startPos, _target, _behaviorTimer.TimerClamped01);
         }
     }
 
