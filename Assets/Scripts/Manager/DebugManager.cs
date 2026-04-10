@@ -4,6 +4,26 @@ namespace NGJ2026.Manager
 {
     public class DebugManager : MonoBehaviour
     {
+        [SerializeField]
+        private bool _disableDebug;
+
+        [SerializeField]
+        private GameObject _debugUI;
+
+        private void Awake()
+        {
+            if (
+#if UNITY_EDITOR
+                _disableDebug
+#else
+                true
+#endif
+                )
+            {
+                _debugUI.SetActive(false);
+            }
+        }
+
         private void OnDrawGizmos()
         {
             Gizmos.color = Color.black;
