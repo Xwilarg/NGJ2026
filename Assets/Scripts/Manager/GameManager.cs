@@ -18,7 +18,7 @@ namespace NGJ2026.Manager
 
             if (!HasScene("level_01"))
             {
-                SceneManager.LoadScene("level_01");
+                SceneManager.LoadScene("level_01", LoadSceneMode.Additive);
             }
         }
 
