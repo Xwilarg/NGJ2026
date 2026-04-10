@@ -1,4 +1,6 @@
 ﻿using NGJ2026.SO;
+using Sketch.Common;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -12,6 +14,11 @@ namespace NGJ2026.Manager
         private GameInfo _info;
         public GameInfo Info => _info;
 
+        [SerializeField]
+        private TMP_Text _statDisplay;
+
+        private Timer _gameTimer;
+
         private void Awake()
         {
             Instance = this;
@@ -20,6 +27,25 @@ namespace NGJ2026.Manager
             {
                 SceneManager.LoadScene("level_01", LoadSceneMode.Additive);
             }
+
+            _gameTimer = new();
+            _gameTimer.OnDone.AddListener(() =>
+            {
+                // TODO: Handle game over
+            });
+            _gameTimer.Start(Info.GameDuration);
+
+            if (_statDisplay == null)
+            {
+                Debug.LogWarning("Stat display not set");
+            }
+        }
+
+        private void Update()
+        {
+            _gameTimer.Update(Time.deltaTime);
+
+            UpdateUI();
         }
 
         private bool HasScene(string sceneName)
@@ -30,6 +56,14 @@ namespace NGJ2026.Manager
                     return true;
             }
             return false;
+        }
+
+        private void UpdateUI()
+        {
+            if (_statDisplay == null) return;
+
+            var remaining = Info.GameDuration - _gameTimer.TimerClamped;
+            _statDisplay.text = $"Timer: {Mathf.FloorToInt(remaining / 60f):00}:{remaining % 60:00}\nScore: {InsectManager.Instance.ButterflyCaught}";
         }
     }
 }
