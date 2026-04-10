@@ -12,6 +12,7 @@ namespace NGJ2026.Manager
         private GameObject _butterflyPrefab;
 
         private List<Butterfly> _insects = new();
+        public IEnumerable<Butterfly> Insects => _insects;
 
         private void Awake()
         {
