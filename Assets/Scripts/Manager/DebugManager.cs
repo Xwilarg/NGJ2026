@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using NGJ2026.SO;
+using UnityEngine;
 
 namespace NGJ2026.Manager
 {
@@ -9,6 +10,9 @@ namespace NGJ2026.Manager
 
         [SerializeField]
         private GameObject _debugUI;
+
+        [SerializeField]
+        private GameInfo _info;
 
         private void Awake()
         {
@@ -37,6 +41,9 @@ namespace NGJ2026.Manager
                     Gizmos.DrawSphere(insect.transform.position, insect.transform.localScale.x);
                 }
             }
+
+            Gizmos.color = Color.white;
+            Gizmos.DrawWireSphere(Vector3.zero, _info.MinDistanceWithPlayer);
         }
     }
 }

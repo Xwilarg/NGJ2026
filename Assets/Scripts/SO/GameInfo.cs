@@ -6,7 +6,7 @@ namespace NGJ2026.SO
     public class GameInfo : ScriptableObject
     {
         [Header("Insects")]
-        public Range<float> DistanceFromPlayer;
+        public float MinDistanceWithPlayer;
         public Range<float> DelayBeforeInsectRestStart;
         public Range<float> DelayBeforeInsectRestEnd;
     }
