@@ -15,3 +15,9 @@ MonoBehaviour:
   DistanceFromPlayer:
     Min: 1.5
     Max: 5
+  DelayBeforeInsectRestStart:
+    Min: 2
+    Max: 4
+  DelayBeforeInsectRestEnd:
+    Min: 0.5
+    Max: 1

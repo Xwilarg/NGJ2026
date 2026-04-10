@@ -11,9 +11,9 @@ namespace NGJ2026.Manager
 
             if (InsectManager.Instance != null)
             {
-                Gizmos.color = Color.blue;
                 foreach (var insect in InsectManager.Instance.Insects)
                 {
+                    Gizmos.color = insect.State == Insect.BehaviorState.Resting ? Color.red : Color.blue;
                     Gizmos.DrawSphere(insect.transform.position, insect.transform.localScale.x);
                 }
             }
