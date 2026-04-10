@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.Assertions;
+using UnityEngine.Events;
 
 namespace NGJ2026.Manager
 {
@@ -13,16 +14,30 @@ namespace NGJ2026.Manager
         [SerializeField]
         private GameObject _butterflyPrefab;
 
+        public int ButterflyCaught { private set; get; }
+        public int BeeCaught { private set; get; }
+        public UnityEvent<Butterfly> OnInsectCaught { get; } = new();
+
         private readonly List<Butterfly> _insects = new();
         public IEnumerable<Butterfly> Insects => _insects;
 
         private IEnumerable<Transform> _flowers;
 
         public IEnumerable<Transform> GetAllFlowers() => _flowers;
-        public IEnumerable<Transform> GetPossibleFlowers(Vector2 myPos)
+        public IEnumerable<Transform> GetPossibleFlowers(Vector2 myPos) // TODO: Doesn't seem to work properly (return all) but not prioritary
         {
             var minPlayerDist = GameManager.Instance.Info.MinDistanceWithPlayer;
             return _flowers.Where(f => IsRayInterceptingCircle(myPos, new Vector2(f.position.x, f.position.z), minPlayerDist));
+        }
+
+        public void CatchButterfly(Butterfly butterfly)
+        {
+            ButterflyCaught++;
+            OnInsectCaught.Invoke(butterfly);
+
+            _insects.Remove(butterfly);
+            Destroy(butterfly.gameObject);
+            SpawnButterfly();
         }
 
         // https://stackoverflow.com/a/76246428
@@ -54,8 +69,7 @@ namespace NGJ2026.Manager
             var go = Instantiate(_butterflyPrefab);
             _insects.Add(go.GetComponent<Butterfly>());
 
-            var randPos = Random.onUnitCircle * GameManager.Instance.Info.MinDistanceWithPlayer;
-            go.transform.position = new(randPos.x, 1f, randPos.y);
+            go.transform.position = LevelManager.Instance.GetRandomSpawnPoint().position;
         }
     }
 }

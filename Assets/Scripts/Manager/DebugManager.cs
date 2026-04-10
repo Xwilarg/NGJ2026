@@ -1,4 +1,5 @@
 ﻿using NGJ2026.SO;
+using System.Linq;
 using UnityEngine;
 
 namespace NGJ2026.Manager
@@ -28,6 +29,11 @@ namespace NGJ2026.Manager
             }
         }
 
+        public void CatchOldestButterfly()
+        {
+            InsectManager.Instance.CatchButterfly(InsectManager.Instance.Insects.First());
+        }
+
         private void OnDrawGizmos()
         {
             Gizmos.color = Color.black;
@@ -38,7 +44,7 @@ namespace NGJ2026.Manager
                 foreach (var insect in InsectManager.Instance.Insects)
                 {
                     Gizmos.color = insect.State == Insect.BehaviorState.Resting ? Color.red : Color.blue;
-                    Gizmos.DrawSphere(insect.transform.position, insect.transform.localScale.x);
+                    Gizmos.DrawWireSphere(insect.transform.position, insect.transform.localScale.x * insect.GetComponent<SphereCollider>().radius);
                 }
             }
 
