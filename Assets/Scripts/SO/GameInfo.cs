@@ -5,6 +5,9 @@ namespace NGJ2026.SO
     [CreateAssetMenu(menuName = "ScriptableObject/GameInfo", fileName = "GameInfo")]
     public class GameInfo : ScriptableObject
     {
+        [Header("Game")]
+        public float GameDuration;
+
         [Header("Insects")]
         public float MinDistanceWithPlayer;
         public Range<float> DelayBeforeInsectRestEnd;
