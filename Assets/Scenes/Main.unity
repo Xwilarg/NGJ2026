@@ -527,7 +527,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -639,7 +639,7 @@ PrefabInstance:
       objectReference: {fileID: 1005753335}
     - target: {fileID: 3365739332912341795, guid: fe25ca72043a52144804561ea8d0f492, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.34528
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3365739332912341795, guid: fe25ca72043a52144804561ea8d0f492, type: 3}
       propertyPath: m_LocalPosition.y
@@ -647,7 +647,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3365739332912341795, guid: fe25ca72043a52144804561ea8d0f492, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1.18717
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3365739332912341795, guid: fe25ca72043a52144804561ea8d0f492, type: 3}
       propertyPath: m_LocalRotation.w
@@ -709,6 +709,10 @@ PrefabInstance:
       propertyPath: _submitPanel
       value: 
       objectReference: {fileID: 1606361706}
+    - target: {fileID: 4562938426371492812, guid: fe25ca72043a52144804561ea8d0f492, type: 3}
+      propertyPath: _leaderboardText
+      value: 
+      objectReference: {fileID: 366640036}
     - target: {fileID: 5526578079359907076, guid: fe25ca72043a52144804561ea8d0f492, type: 3}
       propertyPath: m_Name
       value: GameManager
