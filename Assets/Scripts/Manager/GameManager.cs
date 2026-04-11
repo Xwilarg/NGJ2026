@@ -81,6 +81,7 @@ namespace NGJ2026.Manager
                 else
                 {
                     _gameStartHint.SetActive(true);
+                    _leaderboardText.gameObject.SetActive(false);
                 }
                 _scoreText.text = Translate.Instance.Tr("score_title", InsectManager.Instance.ButterflyCaught.ToString());
             });
@@ -117,12 +118,14 @@ namespace NGJ2026.Manager
             _submitPanel.SetActive(false);
             UpdateLeaderboard();
             _gameStartHint.SetActive(true);
+            _leaderboardText.gameObject.SetActive(false);
         }
 
         public void SkipScore()
         {
             _submitPanel.SetActive(false);
             _gameStartHint.SetActive(true);
+            _leaderboardText.gameObject.SetActive(false);
         }
 
         private void Update()
