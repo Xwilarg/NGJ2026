@@ -14,6 +14,7 @@
     "score_skip": "Ignorer",
 
     "leaderboard_title": "Meilleurs scores",
+    "leaderboard_format": "{0} : {1}",
 
     "game_start": "Appuie sur la barre espace pour démarrer la partie",
 

@@ -283,7 +283,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 333a9d6c9861a654c9df4606d95e60a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NGJ2026.Insect.Butterfly
-  _catchVfx: {fileID: 2418920385726170052}
+  _ghost: {fileID: 4597438703855729032, guid: da7b43cd4f25db942b999f84e5abe498, type: 3}
   _flightCurve:
     serializedVersion: 2
     m_Curve:

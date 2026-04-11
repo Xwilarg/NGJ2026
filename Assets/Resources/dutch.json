@@ -1,0 +1,22 @@
+{
+    "language": "Nederlands",
+
+    "stat_timer": "Tijd: {0}:{1}",
+    "stat_score": "Score: {0}",
+
+    "settings_languages": "Talen",
+    "settings_reset": "Spel herstarten",
+    "settings_quit": "Verlaten",
+
+    "score_title": "Jouw score: {0}",
+    "score_name": "Vul je teamnaam in:",
+    "score_submit": "Verzenden",
+    "score_skip": "Overslaan",
+
+    "leaderboard_title": "Beste scores",
+    "leaderboard_format": "{0}: {1}",
+
+    "game_start": "Druk op 'spatiebalk' om het spel te starten`",
+
+    "credits_font": "Font Cherry Bomb One under the SIL Open Font License, Version 1.1"
+}
