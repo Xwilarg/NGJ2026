@@ -10,6 +10,7 @@
 
     "score_title": "Votre score : {0}",
     "score_name": "Votre nom d'équipe :",
+    "score_name_hint": "Nom de l'équipe",
     "score_submit": "Envoyer",
     "score_skip": "Ignorer",
 
