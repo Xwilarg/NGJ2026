@@ -4,6 +4,7 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.Assertions;
 using UnityEngine.Events;
+using UnityEngine.InputSystem;
 
 namespace NGJ2026.Manager
 {
@@ -14,6 +15,9 @@ namespace NGJ2026.Manager
         [SerializeField]
         private GameObject _butterflyPrefab;
 
+        [SerializeField]
+        private GameObject _gameStartHint;
+
         public int ButterflyCaught { private set; get; }
         public int BeeCaught { private set; get; }
         public UnityEvent<Butterfly> OnInsectCaught { get; } = new();
@@ -22,6 +26,8 @@ namespace NGJ2026.Manager
         public IEnumerable<Butterfly> Insects => _insects;
 
         private IEnumerable<Flower> _flowers;
+
+        private bool _didGameStart;
 
         public IEnumerable<Flower> GetAllFlowers() => _flowers.Where(x => x.Occupant == null);
         public IEnumerable<Flower> GetPossibleFlowers(Vector2 myPos) // TODO: Doesn't seem to work properly (return all) but not prioritary
@@ -78,9 +84,14 @@ namespace NGJ2026.Manager
             Assert.IsTrue(_flowers.Any(), "Couldn't find any flower! Please ensure flowers have the \"Flower\" tag");
         }
 
-        private void Start()
+        public void StartGame(InputAction.CallbackContext value)
         {
-            SpawnLevelButterflies();
+            if (value.phase == InputActionPhase.Started && !_didGameStart)
+            {
+                _didGameStart = true;
+                _gameStartHint.SetActive(false);
+                SpawnLevelButterflies();
+            }
         }
 
         private void SpawnLevelButterflies()

@@ -8,5 +8,7 @@
     "settings_reset": "Reset game",
     "settings_quit": "Quit",
 
+    "game_start": "Press 'spacebar' to start the game",
+
     "credits_font": "Font Cherry Bomb One under the SIL Open Font License, Version 1.1"
 }
