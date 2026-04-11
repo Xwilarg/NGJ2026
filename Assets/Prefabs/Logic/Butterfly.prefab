@@ -100,6 +100,7 @@ MonoBehaviour:
   _wings:
   - {fileID: 7244549299305294869}
   - {fileID: 5005854350794271046}
+  _tutorialText: {fileID: 7355558881666716399}
 --- !u!1 &1828258544336287036
 GameObject:
   m_ObjectHideFlags: 0
