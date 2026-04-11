@@ -28,6 +28,8 @@ namespace NGJ2026.Insect
 
         private float _wingTimer;
 
+        private Vector3[] _iniRots;
+
         private BehaviorState _state = BehaviorState.Flying;
         public BehaviorState State
         {
@@ -59,6 +61,12 @@ namespace NGJ2026.Insect
             });
 
             Assert.IsTrue(_wings.Length == 2);
+
+            _iniRots = new Vector3[]
+            {
+                _wings[0].localRotation.eulerAngles,
+                _wings[1].localRotation.eulerAngles
+            };
         }
 
         private void Start()
@@ -112,8 +120,8 @@ namespace NGJ2026.Insect
             // Wing animation
             _wingTimer += Time.deltaTime * GameManager.Instance.Info.WingMoveSpeed;
             var rot = -90 + (_flightCurve.Evaluate(_wingTimer) * 45f);
-            _wings[0].transform.localRotation = Quaternion.Euler(_wings[0].transform.localRotation.eulerAngles.x, rot, _wings[0].transform.localRotation.eulerAngles.z);
-            _wings[1].transform.localRotation = Quaternion.Euler(_wings[1].transform.localRotation.eulerAngles.x, -rot, _wings[1].transform.localRotation.eulerAngles.z);
+            _wings[0].transform.localRotation = Quaternion.Euler(_iniRots[0].x, rot, _iniRots[0].z);
+            _wings[1].transform.localRotation = Quaternion.Euler(_iniRots[1].x, -rot, _iniRots[1].z);
 
             transform.position = Vector3.Slerp(_startPos, TargetFlower.Top.position, _behaviorTimer.TimerClamped01);
             var direction = _startPos - TargetFlower.Top.position;
