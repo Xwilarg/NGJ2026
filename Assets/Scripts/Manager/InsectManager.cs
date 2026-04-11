@@ -102,6 +102,7 @@ namespace NGJ2026.Manager
             {
                 _didGameStart = true;
                 SpawnLevelButterflies();
+                GameManager.Instance.OnGameSetup.Invoke();
             }
         }
 

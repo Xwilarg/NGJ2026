@@ -47,6 +47,7 @@ namespace NGJ2026.Manager
 
         public UnityEvent OnGameStart { get; } = new();
         public UnityEvent OnGameReset { get; } = new();
+        public UnityEvent OnGameSetup { get; } = new();
 
         public void ProgressLevel()
         {
@@ -84,8 +85,9 @@ namespace NGJ2026.Manager
                 _scoreText.text = Translate.Instance.Tr("score_title", InsectManager.Instance.ButterflyCaught.ToString());
             });
 
-            OnGameStart.AddListener(() =>
+            OnGameSetup.AddListener(() =>
             {
+                _leaderboardText.gameObject.SetActive(false);
                 _gameStartHint.SetActive(false);
                 _submitPanel.SetActive(false);
             });
