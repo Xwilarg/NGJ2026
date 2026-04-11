@@ -112,6 +112,9 @@ namespace NGJ2026.Insect
             _wings[1].transform.localRotation = Quaternion.Euler(_wings[1].transform.localRotation.eulerAngles.x, -rot, _wings[1].transform.localRotation.eulerAngles.z);
 
             transform.position = Vector3.Slerp(_startPos, TargetFlower.Top.position, _behaviorTimer.TimerClamped01);
+            var direction = _startPos - TargetFlower.Top.position;
+            direction.y = 0f;
+            transform.rotation = Quaternion.LookRotation(direction);
         }
 
         private void OnDrawGizmos()
