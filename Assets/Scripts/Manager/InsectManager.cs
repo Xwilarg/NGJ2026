@@ -23,11 +23,11 @@ namespace NGJ2026.Manager
 
         private IEnumerable<Flower> _flowers;
 
-        public IEnumerable<Flower> GetAllFlowers() => _flowers;
+        public IEnumerable<Flower> GetAllFlowers() => _flowers.Where(x => x.Occupant == null);
         public IEnumerable<Flower> GetPossibleFlowers(Vector2 myPos) // TODO: Doesn't seem to work properly (return all) but not prioritary
         {
             var minPlayerDist = GameManager.Instance.Info.MinDistanceWithPlayer;
-            return _flowers.Where(f => IsRayInterceptingCircle(myPos, new Vector2(f.transform.position.x, f.transform.position.z), minPlayerDist));
+            return _flowers.Where(f => f.Occupant == null && IsRayInterceptingCircle(myPos, new Vector2(f.transform.position.x, f.transform.position.z), minPlayerDist));
         }
 
         public void CatchButterfly(Butterfly butterfly)
@@ -35,6 +35,7 @@ namespace NGJ2026.Manager
             ButterflyCaught++;
             OnInsectCaught.Invoke(butterfly);
 
+            if (butterfly.TargetFlower != null) butterfly.TargetFlower.Occupant = null; // Flower that was occupied is now free
             _insects.Remove(butterfly);
             Destroy(butterfly.gameObject);
 
