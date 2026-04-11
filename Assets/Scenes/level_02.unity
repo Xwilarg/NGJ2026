@@ -119,7 +119,7 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1001 &768925803966567030
+--- !u!1001 &1392806947
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -129,7 +129,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1239381068159018418, guid: a4a7975bb21c4d44a8ebba04c61cded3, type: 3}
       propertyPath: m_Name
-      value: Environment
+      value: Environment (1)
       objectReference: {fileID: 0}
     - target: {fileID: 5021858103564984905, guid: a4a7975bb21c4d44a8ebba04c61cded3, type: 3}
       propertyPath: m_LocalPosition.x
@@ -174,10 +174,28 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5108870159250516115, guid: a4a7975bb21c4d44a8ebba04c61cded3, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
+    - targetCorrespondingSourceObject: {fileID: 8758626006695100715, guid: a4a7975bb21c4d44a8ebba04c61cded3, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
+    - targetCorrespondingSourceObject: {fileID: 6141778731867585115, guid: a4a7975bb21c4d44a8ebba04c61cded3, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
+    - targetCorrespondingSourceObject: {fileID: 8145461809193115194, guid: a4a7975bb21c4d44a8ebba04c61cded3, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
+    - targetCorrespondingSourceObject: {fileID: 372938715844770139, guid: a4a7975bb21c4d44a8ebba04c61cded3, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
+    - targetCorrespondingSourceObject: {fileID: 782688274152557868, guid: a4a7975bb21c4d44a8ebba04c61cded3, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: a4a7975bb21c4d44a8ebba04c61cded3, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
-  - {fileID: 768925803966567030}
+  - {fileID: 1392806947}
