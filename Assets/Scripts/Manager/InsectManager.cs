@@ -65,7 +65,6 @@ namespace NGJ2026.Manager
 
         public void CatchButterfly(Butterfly butterfly)
         {
-            ButterflyCaught++;
             OnInsectCaught.Invoke(butterfly);
 
             KillButterfly(butterfly, hardDelete: false);
@@ -75,6 +74,7 @@ namespace NGJ2026.Manager
                 GameManager.Instance.ProgressLevel();
                 SpawnLevelButterflies();
             }
+            ButterflyCaught++;
         }
 
         // https://stackoverflow.com/a/76246428
