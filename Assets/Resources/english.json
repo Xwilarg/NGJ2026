@@ -4,10 +4,6 @@
     "stat_timer": "Timer: {0}:{1}",
     "stat_score": "Score: {0}",
 
-    "settings_languages": "Languages",
-    "settings_reset": "Reset game",
-    "settings_quit": "Quit",
-
     "score_title": "Your score: {0}",
     "score_name": "Enter your team name:",
     "score_name_hint": "Team name",
@@ -16,8 +12,10 @@
 
     "leaderboard_title": "Leaderboard",
     "leaderboard_format": "{0}: {1}",
-
+    
     "game_start": "Press 'space' to start",
+    "game_start": "Press 'spacebar' to start the game",
+    "catch_me": "Catch me!",
 
     "help_1": "Hi Ghost! Your human friend in VR can't see the butterflies.\nHelp them catch as many as possible in the time limit!",
 

@@ -18,6 +18,9 @@ namespace NGJ2026.Insect
         [SerializeField]
         private Transform[] _wings;
 
+        [SerializeField]
+        private GameObject _tutorialText;
+
         private Vector3 _startPos;
 
         private Timer _behaviorTimer;
@@ -61,6 +64,7 @@ namespace NGJ2026.Insect
         private void Start()
         {
             GetTarget(false);
+            _tutorialText.SetActive(GameManager.Instance.IsFirstLevel);
         }
 
         public void GetTarget(bool ignorePlayer)
@@ -107,11 +111,14 @@ namespace NGJ2026.Insect
 
             // Wing animation
             _wingTimer += Time.deltaTime * GameManager.Instance.Info.WingMoveSpeed;
-            var rotZ = _flightCurve.Evaluate(_wingTimer) * 45f;
-            _wings[0].transform.rotation = Quaternion.Euler(0f, 0f, rotZ);
-            _wings[1].transform.rotation = Quaternion.Euler(0f, 0f, -rotZ);
+            var rot = -90 + (_flightCurve.Evaluate(_wingTimer) * 45f);
+            _wings[0].transform.localRotation = Quaternion.Euler(_wings[0].transform.localRotation.eulerAngles.x, rot, _wings[0].transform.localRotation.eulerAngles.z);
+            _wings[1].transform.localRotation = Quaternion.Euler(_wings[1].transform.localRotation.eulerAngles.x, -rot, _wings[1].transform.localRotation.eulerAngles.z);
 
             transform.position = Vector3.Slerp(_startPos, TargetFlower.Top.position, _behaviorTimer.TimerClamped01);
+            var direction = _startPos - TargetFlower.Top.position;
+            direction.y = 0f;
+            transform.rotation = Quaternion.LookRotation(direction);
         }
 
         private void OnDrawGizmos()

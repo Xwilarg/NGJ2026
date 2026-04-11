@@ -4,10 +4,6 @@
     "stat_timer": "Tijd: {0}:{1}",
     "stat_score": "Score: {0}",
 
-    "settings_languages": "Talen",
-    "settings_reset": "Spel herstarten",
-    "settings_quit": "Verlaten",
-
     "score_title": "Jouw score: {0}",
     "score_name": "Vul je teamnaam in:",
     "score_name_hint": "Teamnaam",

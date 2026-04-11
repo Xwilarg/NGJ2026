@@ -4,10 +4,6 @@
     "stat_timer": "Temps : {0}:{1}",
     "stat_score": "Score : {0}",
 
-    "settings_languages": "Langues",
-    "settings_reset": "Recharger la partie",
-    "settings_quit": "Quitter",
-
     "score_title": "Votre score : {0}",
     "score_name": "Votre nom d'équipe :",
     "score_name_hint": "Nom de l'équipe",
@@ -18,6 +14,7 @@
     "leaderboard_format": "{0} : {1}",
 
     "game_start": "Appuie sur la barre espace pour démarrer la partie",
+    "catch_me": "Attrape moi !",
 
     "help_1": "Ton coéquipier en VR ne peut pas voir les papillons !",
     "help_2": "Guide le afin qu'il en attrape le plus possible dans le temps imparti",
