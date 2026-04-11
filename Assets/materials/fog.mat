@@ -124,7 +124,7 @@ Material:
     - _Glossiness: 0
     - _GlossyReflections: 0
     - _MaskBrightness: 1.48
-    - _MaskStrength: 0.21
+    - _MaskStrength: 0.11
     - _Metallic: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.005
