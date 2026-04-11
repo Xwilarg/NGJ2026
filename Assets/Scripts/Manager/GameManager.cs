@@ -27,6 +27,11 @@ namespace NGJ2026.Manager
 
         public void ProgressLevel()
         {
+            if (_levelIndex == 0)
+            {
+                _gameTimer.Start(Info.GameDuration);
+            }
+
             _levelIndex++;
         }
 
@@ -39,7 +44,6 @@ namespace NGJ2026.Manager
             {
                 // TODO: Handle game over
             });
-            _gameTimer.Start(Info.GameDuration);
 
             if (_statDisplay == null)
             {
