@@ -23,6 +23,7 @@ namespace NGJ2026.Manager
 
         public void SetEnglishLanguage() => Translate.Instance.CurrentLanguage = "english";
         public void SetFrenchLanguage() => Translate.Instance.CurrentLanguage = "french";
+        public void SetDutchLanguage() => Translate.Instance.CurrentLanguage = "dutch";
 
         public void ResetGame()
         {
