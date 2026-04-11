@@ -28,6 +28,18 @@ namespace NGJ2026.Persistency
             BestScores.Add(new() { Name = name, Value = value });
             PersistencyManager<SaveData>.Instance.Save();
         }
+
+        public int GetPlace(int value)
+        {
+            for (int i = 0; i < BestScores.Count; i++)
+            {
+                if (value > BestScores[i].Value)
+                {
+                    return value + 1;
+                }
+            }
+            return -1; // Shouldn't happen
+        }
     }
 
     [System.Serializable]
