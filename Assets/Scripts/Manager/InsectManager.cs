@@ -15,6 +15,9 @@ namespace NGJ2026.Manager
         [SerializeField]
         private GameObject _butterflyPrefab;
 
+        [SerializeField]
+        private CopyTransform _playerCT;
+
         public int ButterflyCaught { private set; get; }
         public int BeeCaught { private set; get; }
         public UnityEvent<Butterfly> OnInsectCaught { get; } = new();
@@ -103,6 +106,7 @@ namespace NGJ2026.Manager
                 _didGameStart = true;
                 SpawnLevelButterflies();
                 GameManager.Instance.OnGameSetup.Invoke();
+                _playerCT.StartFollowingPlayer();
             }
         }
 
