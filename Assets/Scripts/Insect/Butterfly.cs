@@ -9,9 +9,9 @@ namespace NGJ2026.Insect
     public class Butterfly : MonoBehaviour
     {
         private Vector3 _startPos;
-        private Vector3 _target;
 
         private Timer _behaviorTimer;
+        public Flower TargetFlower { private set; get; }
 
         private BehaviorState _state = BehaviorState.Flying;
         public BehaviorState State
@@ -51,7 +51,7 @@ namespace NGJ2026.Insect
 
         public void GetTarget(bool ignorePlayer)
         {
-            IEnumerable<Transform> possibles;
+            IEnumerable<Flower> possibles;
 
             if (ignorePlayer)
             {
@@ -70,10 +70,12 @@ namespace NGJ2026.Insect
             }
 
             var arr = possibles.ToArray();
-            _target = arr[Random.Range(0, arr.Length)].position;
+            if (TargetFlower != null) TargetFlower.Occupant = null;
+            TargetFlower = arr[Random.Range(0, arr.Length)];
+            TargetFlower.Occupant = this;
 
             _startPos = transform.position;
-            _behaviorTimer.Start(Vector3.Distance(_startPos, _target) * GameManager.Instance.Info.FlyingSpeed);
+            _behaviorTimer.Start(Vector3.Distance(_startPos, TargetFlower.Top.position) * GameManager.Instance.Info.FlyingSpeed);
         }
 
         private void Update()
@@ -82,13 +84,15 @@ namespace NGJ2026.Insect
 
             if (State == BehaviorState.Resting) return;
 
-            transform.position = Vector3.Slerp(_startPos, _target, _behaviorTimer.TimerClamped01);
+            transform.position = Vector3.Slerp(_startPos, TargetFlower.Top.position, _behaviorTimer.TimerClamped01);
         }
 
         private void OnDrawGizmos()
         {
+            if (TargetFlower == null) return;
+
             Gizmos.color = Color.blue;
-            Gizmos.DrawLine(transform.position, _target);
+            Gizmos.DrawLine(transform.position, TargetFlower.Top.position);
         }
     }
 

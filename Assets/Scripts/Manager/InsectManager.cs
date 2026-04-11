@@ -21,13 +21,13 @@ namespace NGJ2026.Manager
         private readonly List<Butterfly> _insects = new();
         public IEnumerable<Butterfly> Insects => _insects;
 
-        private IEnumerable<Transform> _flowers;
+        private IEnumerable<Flower> _flowers;
 
-        public IEnumerable<Transform> GetAllFlowers() => _flowers;
-        public IEnumerable<Transform> GetPossibleFlowers(Vector2 myPos) // TODO: Doesn't seem to work properly (return all) but not prioritary
+        public IEnumerable<Flower> GetAllFlowers() => _flowers.Where(x => x.Occupant == null);
+        public IEnumerable<Flower> GetPossibleFlowers(Vector2 myPos) // TODO: Doesn't seem to work properly (return all) but not prioritary
         {
             var minPlayerDist = GameManager.Instance.Info.MinDistanceWithPlayer;
-            return _flowers.Where(f => IsRayInterceptingCircle(myPos, new Vector2(f.position.x, f.position.z), minPlayerDist));
+            return _flowers.Where(f => f.Occupant == null && IsRayInterceptingCircle(myPos, new Vector2(f.transform.position.x, f.transform.position.z), minPlayerDist));
         }
 
         public void CatchButterfly(Butterfly butterfly)
@@ -35,6 +35,7 @@ namespace NGJ2026.Manager
             ButterflyCaught++;
             OnInsectCaught.Invoke(butterfly);
 
+            if (butterfly.TargetFlower != null) butterfly.TargetFlower.Occupant = null; // Flower that was occupied is now free
             _insects.Remove(butterfly);
             Destroy(butterfly.gameObject);
 
@@ -60,7 +61,7 @@ namespace NGJ2026.Manager
         {
             Instance = this;
 
-            _flowers = GameObject.FindGameObjectsWithTag("Flower").Select(x => x.transform).ToList();
+            _flowers = GameObject.FindGameObjectsWithTag("Flower").Select(x => x.GetComponent<Flower>()).ToList();
             Assert.IsTrue(_flowers.Any(), "Couldn't find any flower! Please ensure flowers have the \"Flower\" tag");
         }
 
