@@ -51,7 +51,7 @@ namespace NGJ2026.Insect
 
         public void GetTarget(bool ignorePlayer)
         {
-            IEnumerable<Transform> possibles;
+            IEnumerable<Flower> possibles;
 
             if (ignorePlayer)
             {
@@ -70,7 +70,7 @@ namespace NGJ2026.Insect
             }
 
             var arr = possibles.ToArray();
-            _target = arr[Random.Range(0, arr.Length)].position;
+            _target = arr[Random.Range(0, arr.Length)].transform.position;
 
             _startPos = transform.position;
             _behaviorTimer.Start(Vector3.Distance(_startPos, _target) * GameManager.Instance.Info.FlyingSpeed);
