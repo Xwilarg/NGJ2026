@@ -84,6 +84,11 @@ namespace NGJ2026.Manager
             _submitPanel.SetActive(false);
         }
 
+        public void SkipScore()
+        {
+            _submitPanel.SetActive(false);
+        }
+
         private void Update()
         {
             _gameTimer.Update(Time.deltaTime);
