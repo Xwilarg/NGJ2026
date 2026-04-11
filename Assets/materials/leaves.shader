@@ -21,6 +21,7 @@ Shader "Custom/SimpleLeaf"
         LOD 100
         Cull Off
 
+        // ----------- Forward Pass -----------
         Pass
         {
             CGPROGRAM
@@ -43,6 +44,8 @@ Shader "Custom/SimpleLeaf"
                 float4 vertex : POSITION;
                 float2 uv : TEXCOORD0;
                 float3 normal : NORMAL;
+                
+                UNITY_VERTEX_INPUT_INSTANCE_ID
             };
 
             struct v2f
@@ -50,15 +53,21 @@ Shader "Custom/SimpleLeaf"
                 float2 uv : TEXCOORD0;
                 float4 pos : SV_POSITION;
                 float3 normal : TEXCOORD1;
+                
+                UNITY_VERTEX_OUTPUT_STEREO
             };
 
             v2f vert (appdata v)
             {
                 v2f o;
+                
+                UNITY_SETUP_INSTANCE_ID(v); 
+                UNITY_INITIALIZE_OUTPUT(v2f, o); 
+                UNITY_INITIALIZE_VERTEX_OUTPUT_STEREO(o); 
+                
                 o.pos = UnityObjectToClipPos(v.vertex);
                 o.uv = v.uv;
 
-                // Transform normal to world space
                 o.normal = UnityObjectToWorldNormal(v.normal);
 
                 return o;
@@ -68,7 +77,7 @@ Shader "Custom/SimpleLeaf"
             {
                 float mask = tex2D(_MaskTex, i.uv).r;
 
-                // Clip black areas
+                // Cutout
                 clip(mask - _Cutoff);
 
                 float3 albedo = tex2D(_MainTex, i.uv).rgb;
@@ -76,16 +85,59 @@ Shader "Custom/SimpleLeaf"
                 float3 normal = normalize(i.normal);
                 float3 lightDir = normalize(_WorldSpaceLightPos0.xyz);
 
-                // Basic lighting
                 float NdotL = saturate(dot(normal, lightDir));
 
-                // Shadow tint
                 float shadow = lerp(1.0, NdotL, _ShadowStrength);
                 float3 shadowTint = lerp(_ShadowColor.rgb, float3(1,1,1), shadow);
 
                 float3 color = albedo * shadowTint;
 
                 return float4(color, 1.0);
+            }
+            ENDCG
+        }
+
+        // ----------- Shadow Caster Pass -----------
+        Pass
+        {
+            Name "ShadowCaster"
+            Tags { "LightMode"="ShadowCaster" }
+
+            ZWrite On
+            ZTest LEqual
+
+            CGPROGRAM
+            #pragma vertex vertShadow
+            #pragma fragment fragShadow
+            #pragma multi_compile_shadowcaster
+
+            #include "UnityCG.cginc"
+
+            sampler2D _MaskTex;
+            float _Cutoff;
+
+            struct v2f
+            {
+                V2F_SHADOW_CASTER;
+                float2 uv : TEXCOORD1;
+            };
+
+            v2f vertShadow(appdata_base v)
+            {
+                v2f o;
+                TRANSFER_SHADOW_CASTER_NORMALOFFSET(o)
+                o.uv = v.texcoord;
+                return o;
+            }
+
+            float4 fragShadow(v2f i) : SV_Target
+            {
+                float mask = tex2D(_MaskTex, i.uv).r;
+
+                // Same cutout logic as main pass
+                clip(mask - _Cutoff);
+
+                SHADOW_CASTER_FRAGMENT(i)
             }
             ENDCG
         }
