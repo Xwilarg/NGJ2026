@@ -34,7 +34,7 @@ namespace NGJ2026.Manager
             var names = GetNames().OrderBy(_ => Random.value).ToArray();
             for (int i = 0; i < Mathf.Min(_tombstoneNames.Length, names.Length); i++)
             {
-                _tombstoneNames[i].name = names[i];
+                _tombstoneNames[i].text = names[i];
             }
         }
 

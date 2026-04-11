@@ -26,6 +26,9 @@ namespace NGJ2026.Manager
         [SerializeField]
         private TMP_Text _leaderboardText;
 
+        [SerializeField]
+        private TMP_Text _ingameLeaderboardText;
+
         [Header("Score submission")]
         [SerializeField]
         private TMP_Text _statDisplay;
@@ -146,7 +149,16 @@ namespace NGJ2026.Manager
                 str.AppendLine(Translate.Instance.Tr("leaderboard_format", score.Name, score.Value.ToString()));
             }
 
+            StringBuilder strGame = new();
+            strGame.AppendLine(Translate.Instance.Tr("leaderboard_title"));
+            strGame.AppendLine();
+            foreach (var score in PersistencyManager<SaveData>.Instance.SaveData.BestScores.Take(5))
+            {
+                strGame.AppendLine(Translate.Instance.Tr("leaderboard_format", score.Name, score.Value.ToString()));
+            }
+
             _leaderboardText.text = str.ToString();
+            _ingameLeaderboardText.text = strGame.ToString();
         }
 
         private void UpdateUI()
