@@ -24,11 +24,6 @@ namespace NGJ2026.Manager
         {
             Instance = this;
 
-            if (!HasScene("level_01"))
-            {
-                SceneManager.LoadScene("level_01", LoadSceneMode.Additive);
-            }
-
             _gameTimer = new();
             _gameTimer.OnDone.AddListener(() =>
             {
