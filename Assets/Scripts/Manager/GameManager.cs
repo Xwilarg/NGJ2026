@@ -32,7 +32,7 @@ namespace NGJ2026.Manager
 
         [Header("Score submission")]
         [SerializeField]
-        private TMP_Text _statDisplay;
+        private TMP_Text _statDisplay, _timerDisplay;
 
         [SerializeField]
         private TMP_Text _scoreText;
@@ -187,6 +187,7 @@ namespace NGJ2026.Manager
 
             var remaining = Info.GameDuration - _gameTimer.TimerClamped;
             _statDisplay.text = $"{Translate.Instance.Tr("stat_timer", Mathf.FloorToInt(remaining / 60f).ToString("00"), (remaining % 60).ToString("00"))}\n{Translate.Instance.Tr("stat_score", InsectManager.Instance.ButterflyCaught.ToString())}";
+            _timerDisplay.text = $"{Mathf.FloorToInt(remaining / 60f):00}:{remaining % 60:00}";
         }
     }
 }
