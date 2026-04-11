@@ -17,6 +17,7 @@
     "com.unity.xr.oculus": "4.5.4",
     "com.unity.xr.openxr": "1.16.1",
     "eu.zirk.sketch.common": "https://github.com/Xwilarg/Sketch.git?path=/Packages/eu.zirk.sketch.common",
+    "eu.zirk.sketch.persistency": "https://github.com/Xwilarg/Sketch.git?path=/Packages/eu.zirk.sketch.persistency",
     "eu.zirk.sketch.translation": "https://github.com/Xwilarg/Sketch.git?path=/Packages/eu.zirk.sketch.translation",
     "com.unity.modules.accessibility": "1.0.0",
     "com.unity.modules.adaptiveperformance": "1.0.0",
