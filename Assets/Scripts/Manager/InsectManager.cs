@@ -37,7 +37,12 @@ namespace NGJ2026.Manager
 
             _insects.Remove(butterfly);
             Destroy(butterfly.gameObject);
-            SpawnButterfly();
+
+            if (!_insects.Any())
+            {
+                GameManager.Instance.ProgressLevel();
+                SpawnLevelButterflies();
+            }
         }
 
         // https://stackoverflow.com/a/76246428
@@ -61,7 +66,15 @@ namespace NGJ2026.Manager
 
         private void Start()
         {
-            SpawnButterfly();
+            SpawnLevelButterflies();
+        }
+
+        private void SpawnLevelButterflies()
+        {
+            for (int i = 0; i < GameManager.Instance.CurrentLevel.ButterflyCount; i++)
+            {
+                SpawnButterfly();
+            }
         }
 
         private void SpawnButterfly()
@@ -69,7 +82,7 @@ namespace NGJ2026.Manager
             var go = Instantiate(_butterflyPrefab);
             _insects.Add(go.GetComponent<Butterfly>());
 
-            go.transform.position = LevelManager.Instance.GetRandomSpawnPoint().position;
+            go.transform.position = LevelManager.Instance == null ? Vector3.zero : LevelManager.Instance.GetRandomSpawnPoint().position;
         }
     }
 }
