@@ -25,7 +25,8 @@ namespace NGJ2026.Manager
                 "Ronja Palaszewski",
                 "Anouk van Uffelen",
                 "Elias Abildgaard",
-                "Christian Chaux"
+                "Christian Chaux",
+                Random.Range(0, 10) == 0 ? "Jon \"Kill\"iher" : "Jon Kelliher"
             };
         }
     }
