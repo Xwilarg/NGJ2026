@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Sketch.Translation;
+using UnityEngine;
 
 namespace NGJ2026.Manager
 {
@@ -9,6 +10,8 @@ namespace NGJ2026.Manager
 
         private void Awake()
         {
+            Translate.Instance.SetLanguages(new string[] { "english", "french" });
+
             _settingsMenu.SetActive(false);
         }
 
@@ -16,5 +19,8 @@ namespace NGJ2026.Manager
         {
             _settingsMenu.SetActive(!_settingsMenu.activeInHierarchy);
         }
+
+        public void SetEnglishLanguage() => Translate.Instance.CurrentLanguage = "english";
+        public void SetFrenchLanguage() => Translate.Instance.CurrentLanguage = "french";
     }
 }
