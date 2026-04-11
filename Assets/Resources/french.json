@@ -19,5 +19,8 @@
 
     "game_start": "Appuie sur la barre espace pour démarrer la partie",
 
+    "help_1": "Ton coéquipier en VR ne peut pas voir les papillons !",
+    "help_2": "Guide le afin qu'il en attrape le plus possible dans le temps imparti",
+
     "credits_font": "Police Cherry Bomb One sous SIL Open Font License, Version 1.1"
 }

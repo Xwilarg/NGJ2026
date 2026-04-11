@@ -19,7 +19,8 @@
 
     "game_start": "Press 'spacebar' to start the game",
 
-    "help_1": "Your ally in VR can't see the butterfly! Guide him so he can catch them",
+    "help_1": "Your ally in VR can't see the butterfly!",
+    "help_2": "Guide him so he can catch as many as possible in the time limit",
 
     "credits_font": "Font Cherry Bomb One under the SIL Open Font License, Version 1.1"
 }
