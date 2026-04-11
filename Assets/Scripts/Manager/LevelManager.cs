@@ -23,7 +23,9 @@ namespace NGJ2026.Manager
             {
                 Random.Range(0, 10) == 0 ? "Thomas Van 'Boo'wel" : "Thomas Van Bouwel",
                 "Ronja Palaszewski",
-                "Anouk van Uffelen"
+                "Anouk van Uffelen",
+                "Elias Abildgaard",
+                "Christian Chaux"
             };
         }
     }
