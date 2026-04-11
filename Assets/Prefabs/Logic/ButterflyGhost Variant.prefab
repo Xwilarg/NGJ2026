@@ -24,6 +24,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: ButterflyGhost Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 1917938052866132740, guid: 39788db60c1e19d4c8d272ddd9628041, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2090996308019162042, guid: 39788db60c1e19d4c8d272ddd9628041, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2157426525168688364, guid: 39788db60c1e19d4c8d272ddd9628041, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
@@ -40,6 +48,10 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 7fcf9eb419d1d574dbfd2d7ff108ee21, type: 2}
+    - target: {fileID: 3117095996306906519, guid: 39788db60c1e19d4c8d272ddd9628041, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3502910960739334673, guid: 39788db60c1e19d4c8d272ddd9628041, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -78,6 +90,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3502910960739334673, guid: 39788db60c1e19d4c8d272ddd9628041, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3750873929601620077, guid: 39788db60c1e19d4c8d272ddd9628041, type: 3}
+      propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4879005814028640413, guid: 39788db60c1e19d4c8d272ddd9628041, type: 3}

@@ -1,0 +1,33 @@
+ {
+    "language": "Español",
+
+    "stat_timer": "Tiempo: {0}:{1}",
+    "stat_score": "Puntuación: {0}",
+
+    "score_title": "Tu puntuación: {0}",
+    "score_name": "Ingresa el nombre de tu equipo:",
+    "score_name_hint": "Nombre del equipo",
+    "score_submit": "Enviar",
+    "score_skip": "Omitir",
+    "score_rank": "Obtuviste el puesto {0}",
+    "score_1": "ero",
+    "score_2": "do",
+    "score_3": "ero",
+    "score_4": "to",
+
+    "leaderboard_title": "Tabla de posiciones",
+    "leaderboard_format": "{0}: {1}",
+    
+    "game_start": "Presiona 'espacio' para comenzar",
+    "catch_me": "¡Atrápame!",
+
+    "help_1": "¡Hola Fantasma! Tu amigo humano en VR no puede ver las mariposas.",
+    "help_2": "¡Ayúdale a atrapar la mayor cantidad posible dentro del tiempo límite!",
+
+    "help_you": "Tú",
+    "help_friend": "Amigo",
+
+    "vr_plug": "Por favor conecta tu casco de VR",
+
+    "credits_font": "Fuente Cherry Bomb One bajo la Licencia de Fuente Abierta SIL, Versión 1.1"
+} 
