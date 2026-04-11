@@ -9,6 +9,11 @@
     "score_name_hint": "Team name",
     "score_submit": "Submit",
     "score_skip": "Skip",
+    "score_rank": "You got the {0} place",
+    "score_1": "st",
+    "score_2": "nd",
+    "score_3": "rd",
+    "score_4": "th",
 
     "leaderboard_title": "Leaderboard",
     "leaderboard_format": "{0}: {1}",
@@ -18,6 +23,9 @@
 
     "help_1": "Hi Ghost! Your human friend in VR can't see the butterflies.",
     "help_2": "Help them catch as many as possible in the time limit!",
+
+    "help_you": "You",
+    "help_friend": "Friend",
 
     "vr_plug": "Please plug your VR headset on",
 

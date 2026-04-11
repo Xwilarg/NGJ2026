@@ -9,6 +9,11 @@
     "score_name_hint": "Nom de l'équipe",
     "score_submit": "Envoyer",
     "score_skip": "Ignorer",
+    "score_rank": "You avez la {0} place",
+    "score_1": "ère",
+    "score_2": "ème",
+    "score_3": "ème",
+    "score_4": "ème",
 
     "leaderboard_title": "Meilleurs scores",
     "leaderboard_format": "{0} : {1}",
@@ -18,6 +23,9 @@
 
     "help_1": "Salut toi! Ton ami humain en VR ne peut pas voir les papillons.",
     "help_2": "Aide le à en attraper le plus possible dans le temps imparti !",
+
+    "help_you": "Toi",
+    "help_friend": "Ami",
 
     "vr_plug": "Merci de brancher ton casque VR",
 
