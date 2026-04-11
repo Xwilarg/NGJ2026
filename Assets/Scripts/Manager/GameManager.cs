@@ -3,6 +3,7 @@ using NGJ2026.SO;
 using Sketch.Common;
 using Sketch.Persistency;
 using Sketch.Translation;
+using System;
 using System.Linq;
 using System.Text;
 using TMPro;
@@ -41,6 +42,9 @@ namespace NGJ2026.Manager
 
         [SerializeField]
         private TMP_InputField _inputField;
+
+        [SerializeField]
+        private TMP_Text _youGotPlace;
 
         private Timer _gameTimer;
 
@@ -128,7 +132,11 @@ namespace NGJ2026.Manager
                 return;
             }
 
-            PersistencyManager<SaveData>.Instance.SaveData.AddScore(_inputField.text, InsectManager.Instance.ButterflyCaught);
+            var c = InsectManager.Instance.ButterflyCaught;
+            PersistencyManager<SaveData>.Instance.SaveData.AddScore(_inputField.text, c);
+            var place = PersistencyManager<SaveData>.Instance.SaveData.GetPlace(c);
+            string prefix = $"score_{Math.Clamp(place, 1, 4)}";
+            _youGotPlace.text = Translate.Instance.Tr("score_rank", $"{place}{Translate.Instance.Tr(prefix)}");
 
             _submitPanel.SetActive(false);
             UpdateLeaderboard();
