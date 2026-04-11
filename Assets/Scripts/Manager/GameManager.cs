@@ -74,6 +74,7 @@ namespace NGJ2026.Manager
 
             OnGameReset.AddListener(() =>
             {
+                _levelIndex = 0;
                 if (PersistencyManager<SaveData>.Instance.SaveData.IsInLeaderboard(InsectManager.Instance.ButterflyCaught))
                 {
                     _submitPanel.SetActive(true);
