@@ -5,6 +5,8 @@
     "stat_score": "Score : {0}",
 
     "settings_languages": "Langues",
+    "settings_reset": "Recharger la partie",
+    "settings_quit": "Quitter",
 
     "credits_font": "Police Cherry Bomb One sous SIL Open Font License, Version 1.1"
 }

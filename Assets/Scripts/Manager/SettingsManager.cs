@@ -1,5 +1,6 @@
 ﻿using Sketch.Translation;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace NGJ2026.Manager
 {
@@ -22,5 +23,15 @@ namespace NGJ2026.Manager
 
         public void SetEnglishLanguage() => Translate.Instance.CurrentLanguage = "english";
         public void SetFrenchLanguage() => Translate.Instance.CurrentLanguage = "french";
+
+        public void ResetGame()
+        {
+            SceneManager.LoadScene("Main");
+        }
+
+        public void QuitGame()
+        {
+            Application.Quit();
+        }
     }
 }

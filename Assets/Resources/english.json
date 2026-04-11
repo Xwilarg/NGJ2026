@@ -5,6 +5,8 @@
     "stat_score": "Score: {0}",
 
     "settings_languages": "Languages",
+    "settings_reset": "Reset game",
+    "settings_quit": "Quit",
 
     "credits_font": "Font Cherry Bomb One under the SIL Open Font License, Version 1.1"
 }
