@@ -16,5 +16,15 @@ namespace NGJ2026.Manager
         {
             Instance = this;
         }
+
+        public string[] GetNames()
+        {
+            return new string[]
+            {
+                Random.Range(0, 10) == 0 ? "Thomas Van 'Boo'wel" : "Thomas Van Bouwel",
+                "Ronja Palaszewski",
+                "Anouk van Uffelen"
+            };
+        }
     }
 }

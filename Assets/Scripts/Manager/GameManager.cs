@@ -16,6 +16,11 @@ namespace NGJ2026.Manager
         private GameInfo _info;
         public GameInfo Info => _info;
 
+        [Header("Leaderboard")]
+        [SerializeField]
+        private TMP_Text _leaderboardText;
+
+        [Header("Score submission")]
         [SerializeField]
         private TMP_Text _statDisplay;
 
@@ -72,6 +77,12 @@ namespace NGJ2026.Manager
             }
         }
 
+        private void Start()
+        {
+            Translate.Instance.OnLanguageChanged.AddListener(UpdateLeaderboard);
+            UpdateLeaderboard();
+        }
+
         public void SubmitScore()
         {
             if (_inputField.text.Length == 0)
@@ -84,11 +95,21 @@ namespace NGJ2026.Manager
             _submitPanel.SetActive(false);
         }
 
+        public void SkipScore()
+        {
+            _submitPanel.SetActive(false);
+        }
+
         private void Update()
         {
             _gameTimer.Update(Time.deltaTime);
 
             UpdateUI();
+        }
+
+        public void UpdateLeaderboard()
+        {
+            _leaderboardText.text = Translate.Instance.Tr("leaderboard_title");
         }
 
         private void UpdateUI()
