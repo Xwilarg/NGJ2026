@@ -26,7 +26,8 @@ namespace NGJ2026.Insect
                 }
                 else
                 {
-                    _behaviorTimer.Start(Random.Range(GameManager.Instance.Info.DelayBeforeInsectRestEnd.Min, GameManager.Instance.Info.DelayBeforeInsectRestEnd.Max));
+                    if (!GameManager.Instance.CurrentLevel.IsStatic)
+                        _behaviorTimer.Start(Random.Range(GameManager.Instance.Info.DelayBeforeInsectRestEnd.Min, GameManager.Instance.Info.DelayBeforeInsectRestEnd.Max));
                 }
             }
             get => _state;

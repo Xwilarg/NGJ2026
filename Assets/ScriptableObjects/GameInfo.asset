@@ -13,6 +13,15 @@ MonoBehaviour:
   m_Name: GameInfo
   m_EditorClassIdentifier: Assembly-CSharp::NGJ2026.SO.GameInfo
   GameDuration: 120
+  Levels:
+  - ButterflyCount: 1
+    IsStatic: 1
+  - ButterflyCount: 1
+    IsStatic: 0
+  - ButterflyCount: 1
+    IsStatic: 0
+  - ButterflyCount: 2
+    IsStatic: 0
   MinDistanceWithPlayer: 1.5
   DelayBeforeInsectRestEnd:
     Min: 0.5

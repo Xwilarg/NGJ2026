@@ -1,6 +1,7 @@
 ﻿using NGJ2026.SO;
 using Sketch.Common;
 using Sketch.Translation;
+using System.Linq;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -19,6 +20,15 @@ namespace NGJ2026.Manager
         private TMP_Text _statDisplay;
 
         private Timer _gameTimer;
+
+        private int _levelIndex;
+
+        public Level CurrentLevel => _levelIndex >= Info.Levels.Length ? Info.Levels.Last() : Info.Levels[_levelIndex];
+
+        public void ProgressLevel()
+        {
+            _levelIndex++;
+        }
 
         private void Awake()
         {
@@ -42,16 +52,6 @@ namespace NGJ2026.Manager
             _gameTimer.Update(Time.deltaTime);
 
             UpdateUI();
-        }
-
-        private bool HasScene(string sceneName)
-        {
-            for (int i = 0; i < SceneManager.sceneCount; i++)
-            {
-                if (string.Compare(sceneName, SceneManager.GetSceneAt(i).name, true) == 0)
-                    return true;
-            }
-            return false;
         }
 
         private void UpdateUI()

@@ -7,6 +7,7 @@ namespace NGJ2026.SO
     {
         [Header("Game")]
         public float GameDuration;
+        public Level[] Levels;
 
         [Header("Insects")]
         public float MinDistanceWithPlayer;
@@ -18,5 +19,12 @@ namespace NGJ2026.SO
     public record Range<T>
     {
         public T Min, Max;
+    }
+
+    [System.Serializable]
+    public record Level
+    {
+        public int ButterflyCount;
+        public bool IsStatic;
     }
 }
