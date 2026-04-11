@@ -70,6 +70,8 @@ namespace NGJ2026.Manager
             Instance = this;
 
             _submitPanel.SetActive(false);
+            _gameStartHint.SetActive(true);
+            _tutorialObject.SetActive(false);
 
             _gameTimer = new();
             _gameTimer.OnDone.AddListener(() =>
