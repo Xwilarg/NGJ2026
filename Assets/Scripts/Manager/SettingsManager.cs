@@ -1,6 +1,7 @@
 ﻿using Sketch.Translation;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 namespace NGJ2026.Manager
 {
@@ -8,7 +9,10 @@ namespace NGJ2026.Manager
     {
         [SerializeField]
         private GameObject _settingsMenu;
-
+        [SerializeField] private Image _languageButtonSprite;
+        [SerializeField] private Sprite _defaultLanguageSprite;
+        [SerializeField] private Sprite _closeLanguageSettingsSprite;
+        
         private void Awake()
         {
             Translate.Instance.SetLanguages(new string[] { "english", "french" });
@@ -19,6 +23,7 @@ namespace NGJ2026.Manager
         public void ToggleMenu()
         {
             _settingsMenu.SetActive(!_settingsMenu.activeInHierarchy);
+            _languageButtonSprite.sprite = _settingsMenu.activeInHierarchy ? _closeLanguageSettingsSprite : _defaultLanguageSprite;
         }
 
         public void SetEnglishLanguage() => Translate.Instance.CurrentLanguage = "english";
