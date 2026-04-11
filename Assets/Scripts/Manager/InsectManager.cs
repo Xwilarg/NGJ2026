@@ -55,15 +55,16 @@ namespace NGJ2026.Manager
         {
             for (int i = _insects.Count - 1; i >= 0; i--)
             {
-                KillButterfly(_insects[i]);
+                KillButterfly(_insects[i], hardDelete: true);
             }
         }
 
-        public void KillButterfly(Butterfly butterfly)
+        public void KillButterfly(Butterfly butterfly, bool hardDelete)
         {
             if (butterfly.TargetFlower != null) butterfly.TargetFlower.Occupant = null; // Flower that was occupied is now free
             _insects.Remove(butterfly);
-            Destroy(butterfly.gameObject);
+            if (hardDelete) Destroy(butterfly.gameObject);
+            else butterfly.Catch();
         }
 
         public void CatchButterfly(Butterfly butterfly)
@@ -71,7 +72,7 @@ namespace NGJ2026.Manager
             ButterflyCaught++;
             OnInsectCaught.Invoke(butterfly);
 
-            KillButterfly(butterfly);
+            KillButterfly(butterfly, hardDelete: false);
 
             if (!_insects.Any())
             {

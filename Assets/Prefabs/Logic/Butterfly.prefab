@@ -285,6 +285,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 333a9d6c9861a654c9df4606d95e60a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NGJ2026.Insect.Butterfly
+  _catchVfx: {fileID: 2418920385726170052}
 --- !u!1 &1874748813724560452
 GameObject:
   m_ObjectHideFlags: 0
@@ -5138,7 +5139,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7900472228526012407
 Transform:
   m_ObjectHideFlags: 0

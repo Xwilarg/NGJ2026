@@ -8,6 +8,9 @@ namespace NGJ2026.Insect
 {
     public class Butterfly : MonoBehaviour
     {
+        [SerializeField]
+        private GameObject _catchVfx;
+
         private Vector3 _startPos;
 
         private Timer _behaviorTimer;
@@ -76,6 +79,12 @@ namespace NGJ2026.Insect
 
             _startPos = transform.position;
             _behaviorTimer.Start(Vector3.Distance(_startPos, TargetFlower.Top.position) * GameManager.Instance.Info.FlyingSpeed);
+        }
+
+        public void Catch()
+        {
+            _catchVfx.SetActive(true);
+            Destroy(gameObject, .5f);
         }
 
         private void Update()
