@@ -10,6 +10,7 @@
 
     "score_title": "Jouw score: {0}",
     "score_name": "Vul je teamnaam in:",
+    "score_name_hint": "Teamnaam",
     "score_submit": "Verzenden",
     "score_skip": "Overslaan",
 

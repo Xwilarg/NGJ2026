@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9b1881fe66918748a1ce48544162528, type: 3}
   m_Name: GameInfo
   m_EditorClassIdentifier: Assembly-CSharp::NGJ2026.SO.GameInfo
-  GameDuration: 120
+  GameDuration: 10
   Levels:
   - ButterflyCount: 1
     IsStatic: 1
