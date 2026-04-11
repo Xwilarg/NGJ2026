@@ -101,7 +101,7 @@ namespace NGJ2026.Manager
 
         public void StartGame(InputAction.CallbackContext value)
         {
-            if (value.phase == InputActionPhase.Started && !_didGameStart)
+            if (value.phase == InputActionPhase.Started && !_didGameStart && !GameManager.Instance.IsScorePanelOpen)
             {
                 _didGameStart = true;
                 SpawnLevelButterflies();
