@@ -15,9 +15,6 @@ namespace NGJ2026.Manager
         [SerializeField]
         private GameObject _butterflyPrefab;
 
-        [SerializeField]
-        private GameObject _gameStartHint;
-
         public int ButterflyCaught { private set; get; }
         public int BeeCaught { private set; get; }
         public UnityEvent<Butterfly> OnInsectCaught { get; } = new();
@@ -35,7 +32,6 @@ namespace NGJ2026.Manager
             {
                 KillAllButterfies();
                 _didGameStart = false;
-                _gameStartHint.SetActive(true);
             });
             GameManager.Instance.OnGameStart.AddListener(() =>
             {
@@ -105,7 +101,6 @@ namespace NGJ2026.Manager
             if (value.phase == InputActionPhase.Started && !_didGameStart)
             {
                 _didGameStart = true;
-                _gameStartHint.SetActive(false);
                 SpawnLevelButterflies();
             }
         }

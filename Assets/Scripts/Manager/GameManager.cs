@@ -1,5 +1,7 @@
-﻿using NGJ2026.SO;
+﻿using NGJ2026.Persistency;
+using NGJ2026.SO;
 using Sketch.Common;
+using Sketch.Persistency;
 using Sketch.Translation;
 using System.Linq;
 using System.Text;
@@ -16,6 +18,9 @@ namespace NGJ2026.Manager
         [SerializeField]
         private GameInfo _info;
         public GameInfo Info => _info;
+
+        [SerializeField]
+        private GameObject _gameStartHint;
 
         [Header("Leaderboard")]
         [SerializeField]
@@ -68,8 +73,21 @@ namespace NGJ2026.Manager
 
             OnGameReset.AddListener(() =>
             {
-                _submitPanel.SetActive(true);
+                if (PersistencyManager<SaveData>.Instance.SaveData.IsInLeaderboard(InsectManager.Instance.ButterflyCaught))
+                {
+                    _submitPanel.SetActive(true);
+                }
+                else
+                {
+                    _gameStartHint.SetActive(true);
+                }
                 _scoreText.text = Translate.Instance.Tr("score_title", InsectManager.Instance.ButterflyCaught.ToString());
+            });
+
+            OnGameStart.AddListener(() =>
+            {
+                _gameStartHint.SetActive(false);
+                _submitPanel.SetActive(false);
             });
 
             if (_statDisplay == null)
@@ -91,14 +109,18 @@ namespace NGJ2026.Manager
                 Debug.LogWarning("Trying to submit an empty text, ignoring...");
                 return;
             }
-            // TODO: register score
+
+            PersistencyManager<SaveData>.Instance.SaveData.AddScore(_inputField.text, InsectManager.Instance.ButterflyCaught);
 
             _submitPanel.SetActive(false);
+            UpdateLeaderboard();
+            _gameStartHint.SetActive(true);
         }
 
         public void SkipScore()
         {
             _submitPanel.SetActive(false);
+            _gameStartHint.SetActive(true);
         }
 
         private void Update()
@@ -113,6 +135,10 @@ namespace NGJ2026.Manager
             StringBuilder str = new();
             str.AppendLine(Translate.Instance.Tr("leaderboard_title"));
             str.AppendLine();
+            foreach (var score in PersistencyManager<SaveData>.Instance.SaveData.BestScores)
+            {
+                str.AppendLine(Translate.Instance.Tr("leaderboard_format", score.Name, score.Value.ToString()));
+            }
 
             _leaderboardText.text = str.ToString();
         }
