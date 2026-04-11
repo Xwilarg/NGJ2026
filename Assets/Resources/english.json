@@ -14,10 +14,12 @@
     "leaderboard_format": "{0}: {1}",
     
     "game_start": "Press 'space' to start",
-    "game_start": "Press 'spacebar' to start the game",
     "catch_me": "Catch me!",
 
-    "help_1": "Hi Ghost! Your human friend in VR can't see the butterflies.\nHelp them catch as many as possible in the time limit!",
+    "help_1": "Hi Ghost! Your human friend in VR can't see the butterflies.",
+    "help_2": "Help them catch as many as possible in the time limit!",,
+
+    "vr_plug": "Please plug your VR headset on",
 
     "credits_font": "Font Cherry Bomb One under the SIL Open Font License, Version 1.1"
 }

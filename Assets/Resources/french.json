@@ -13,11 +13,13 @@
     "leaderboard_title": "Meilleurs scores",
     "leaderboard_format": "{0} : {1}",
 
-    "game_start": "Appuie sur la barre espace pour démarrer la partie",
+    "game_start": "Appuie sur la barre espace pour commencer",
     "catch_me": "Attrape moi !",
 
-    "help_1": "Ton coéquipier en VR ne peut pas voir les papillons !",
-    "help_2": "Guide le afin qu'il en attrape le plus possible dans le temps imparti",
+    "help_1": "Salut toi! Ton ami humain en VR ne peut pas voir les papillons.",
+    "help_2": "Aide le à en attraper le plus possible dans le temps imparti !",
+
+    "vr_plug": "Merci de brancher ton casque VR",
 
     "credits_font": "Police Cherry Bomb One sous SIL Open Font License, Version 1.1"
 }
