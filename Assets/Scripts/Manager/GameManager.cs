@@ -74,6 +74,7 @@ namespace NGJ2026.Manager
 
             OnGameReset.AddListener(() =>
             {
+                _levelIndex = 0;
                 if (PersistencyManager<SaveData>.Instance.SaveData.IsInLeaderboard(InsectManager.Instance.ButterflyCaught))
                 {
                     _submitPanel.SetActive(true);
@@ -118,14 +119,14 @@ namespace NGJ2026.Manager
             _submitPanel.SetActive(false);
             UpdateLeaderboard();
             _gameStartHint.SetActive(true);
-            _leaderboardText.gameObject.SetActive(false);
+            _leaderboardText.gameObject.SetActive(true);
         }
 
         public void SkipScore()
         {
             _submitPanel.SetActive(false);
             _gameStartHint.SetActive(true);
-            _leaderboardText.gameObject.SetActive(false);
+            _leaderboardText.gameObject.SetActive(true);
         }
 
         private void Update()
