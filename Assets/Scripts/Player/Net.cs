@@ -6,6 +6,9 @@ namespace NGJ2026.Player
 {
     public class Net : MonoBehaviour
     {
+        [SerializeField]
+        private Transform _velRefPoint;
+
         private void OnTriggerEnter(Collider other)
         {
             if (other.TryGetComponent<Butterfly>(out var b))
