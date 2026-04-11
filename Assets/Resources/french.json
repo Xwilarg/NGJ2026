@@ -4,10 +4,6 @@
     "stat_timer": "Temps : {0}:{1}",
     "stat_score": "Score : {0}",
 
-    "settings_languages": "Langues",
-    "settings_reset": "Recharger la partie",
-    "settings_quit": "Quitter",
-
     "score_title": "Votre score : {0}",
     "score_name": "Votre nom d'équipe :",
     "score_name_hint": "Nom de l'équipe",
