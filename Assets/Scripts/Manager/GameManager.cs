@@ -42,7 +42,7 @@ namespace NGJ2026.Manager
             _gameTimer = new();
             _gameTimer.OnDone.AddListener(() =>
             {
-                // TODO: Handle game over
+                InsectManager.Instance.KillAllButterfies();
             });
 
             if (_statDisplay == null)
