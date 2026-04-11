@@ -19,6 +19,15 @@ namespace NGJ2026.Manager
         [SerializeField]
         private TMP_Text _statDisplay;
 
+        [SerializeField]
+        private TMP_Text _scoreText;
+
+        [SerializeField]
+        private GameObject _submitPanel;
+
+        [SerializeField]
+        private TMP_InputField _inputField;
+
         private Timer _gameTimer;
 
         private int _levelIndex;
@@ -43,16 +52,36 @@ namespace NGJ2026.Manager
         {
             Instance = this;
 
+            _submitPanel.SetActive(false);
+
             _gameTimer = new();
             _gameTimer.OnDone.AddListener(() =>
             {
                 OnGameReset.Invoke();
             });
 
+            OnGameReset.AddListener(() =>
+            {
+                _submitPanel.SetActive(true);
+                _scoreText.text = Translate.Instance.Tr("score_title", InsectManager.Instance.ButterflyCaught.ToString());
+            });
+
             if (_statDisplay == null)
             {
                 Debug.LogWarning("Stat display not set");
             }
+        }
+
+        public void SubmitScore()
+        {
+            if (_inputField.text.Length == 0)
+            {
+                Debug.LogWarning("Trying to submit an empty text, ignoring...");
+                return;
+            }
+            // TODO: register score
+
+            _submitPanel.SetActive(false);
         }
 
         private void Update()

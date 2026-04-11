@@ -1,7 +1,9 @@
 using NGJ2026.Manager;
+using NUnit.Framework;
 using Sketch.Common;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.NetworkInformation;
 using UnityEngine;
 
 namespace NGJ2026.Insect
@@ -11,10 +13,18 @@ namespace NGJ2026.Insect
         [SerializeField]
         private GameObject _catchVfx;
 
+        [SerializeField]
+        private AnimationCurve _flightCurve;
+
+        [SerializeField]
+        private Transform[] _wings;
+
         private Vector3 _startPos;
 
         private Timer _behaviorTimer;
         public Flower TargetFlower { private set; get; }
+
+        private float _wingTimer;
 
         private BehaviorState _state = BehaviorState.Flying;
         public BehaviorState State
@@ -45,6 +55,8 @@ namespace NGJ2026.Insect
                 if (State == BehaviorState.Resting) State = BehaviorState.Flying;
                 else State = BehaviorState.Resting;
             });
+
+            Assert.IsTrue(_wings.Length == 2);
         }
 
         private void Start()
@@ -92,6 +104,12 @@ namespace NGJ2026.Insect
             _behaviorTimer.Update(Time.deltaTime);
 
             if (State == BehaviorState.Resting) return;
+
+            // Wing animation
+            _wingTimer += Time.deltaTime * GameManager.Instance.Info.WingMoveSpeed;
+            var rotZ = _flightCurve.Evaluate(_wingTimer) * 45f;
+            _wings[0].transform.rotation = Quaternion.Euler(0f, 0f, rotZ);
+            _wings[1].transform.rotation = Quaternion.Euler(0f, 0f, -rotZ);
 
             transform.position = Vector3.Slerp(_startPos, TargetFlower.Top.position, _behaviorTimer.TimerClamped01);
         }

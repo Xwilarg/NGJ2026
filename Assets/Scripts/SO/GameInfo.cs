@@ -13,6 +13,7 @@ namespace NGJ2026.SO
         public float MinDistanceWithPlayer;
         public Range<float> DelayBeforeInsectRestEnd;
         public float FlyingSpeed;
+        public float WingMoveSpeed;
     }
 
     [System.Serializable]

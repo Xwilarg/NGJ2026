@@ -27,3 +27,4 @@ MonoBehaviour:
     Min: 2
     Max: 5
   FlyingSpeed: 0.5
+  WingMoveSpeed: 5
