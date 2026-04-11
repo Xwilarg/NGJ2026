@@ -108,8 +108,8 @@ namespace NGJ2026.Insect
             // Wing animation
             _wingTimer += Time.deltaTime * GameManager.Instance.Info.WingMoveSpeed;
             var rot = -90 + (_flightCurve.Evaluate(_wingTimer) * 45f);
-            _wings[0].transform.localRotation = Quaternion.Euler(_wings[0].transform.rotation.eulerAngles.x, rot, _wings[0].transform.rotation.eulerAngles.z);
-            _wings[1].transform.localRotation = Quaternion.Euler(_wings[1].transform.rotation.eulerAngles.x, -rot, _wings[1].transform.rotation.eulerAngles.z);
+            _wings[0].transform.localRotation = Quaternion.Euler(_wings[0].transform.localRotation.eulerAngles.x, rot, _wings[0].transform.localRotation.eulerAngles.z);
+            _wings[1].transform.localRotation = Quaternion.Euler(_wings[1].transform.localRotation.eulerAngles.x, -rot, _wings[1].transform.localRotation.eulerAngles.z);
 
             transform.position = Vector3.Slerp(_startPos, TargetFlower.Top.position, _behaviorTimer.TimerClamped01);
         }
