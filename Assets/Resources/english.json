@@ -1,11 +1,10 @@
 {
     "language": "English",
 
-    "play": "Play",
-    "credits": "Credits",
-
     "stat_timer": "Timer: {0]:{1}",
     "stat_score": "Score: {0}",
+
+    "settings_languages": "Languages",
 
     "credits_font": "Font Cherry Bomb One under the SIL Open Font License, Version 1.1"
 }
