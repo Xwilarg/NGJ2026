@@ -18,6 +18,9 @@ namespace NGJ2026.Insect
         [SerializeField]
         private Transform[] _wings;
 
+        [SerializeField]
+        private GameObject _tutorialText;
+
         private Vector3 _startPos;
 
         private Timer _behaviorTimer;
@@ -61,6 +64,7 @@ namespace NGJ2026.Insect
         private void Start()
         {
             GetTarget(false);
+            _tutorialText.SetActive(GameManager.Instance.IsFirstLevel);
         }
 
         public void GetTarget(bool ignorePlayer)

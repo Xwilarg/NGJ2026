@@ -46,6 +46,8 @@ namespace NGJ2026.Manager
 
         private int _levelIndex;
 
+        public bool IsFirstLevel => _levelIndex == 0;
+
         public Level CurrentLevel => _levelIndex >= Info.Levels.Length ? Info.Levels.Last() : Info.Levels[_levelIndex];
 
         public UnityEvent OnGameStart { get; } = new();

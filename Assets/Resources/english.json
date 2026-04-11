@@ -14,6 +14,7 @@
     "leaderboard_format": "{0}: {1}",
 
     "game_start": "Press 'spacebar' to start the game",
+    "catch_me": "Catch me!",
 
     "help_1": "Your ally in VR can't see the butterfly!",
     "help_2": "Guide him so he can catch as many as possible in the time limit",
