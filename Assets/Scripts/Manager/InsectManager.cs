@@ -4,6 +4,7 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.Assertions;
 using UnityEngine.Events;
+using UnityEngine.InputSystem;
 
 namespace NGJ2026.Manager
 {
@@ -14,6 +15,9 @@ namespace NGJ2026.Manager
         [SerializeField]
         private GameObject _butterflyPrefab;
 
+        [SerializeField]
+        private GameObject _gameStartHint;
+
         public int ButterflyCaught { private set; get; }
         public int BeeCaught { private set; get; }
         public UnityEvent<Butterfly> OnInsectCaught { get; } = new();
@@ -23,6 +27,23 @@ namespace NGJ2026.Manager
 
         private IEnumerable<Flower> _flowers;
 
+        private bool _didGameStart;
+
+        private void Start()
+        {
+            GameManager.Instance.OnGameReset.AddListener(() =>
+            {
+                KillAllButterfies();
+                _didGameStart = false;
+                _gameStartHint.SetActive(true);
+            });
+            GameManager.Instance.OnGameStart.AddListener(() =>
+            {
+                ButterflyCaught = 0;
+                BeeCaught = 0;
+            });
+        }
+
         public IEnumerable<Flower> GetAllFlowers() => _flowers.Where(x => x.Occupant == null);
         public IEnumerable<Flower> GetPossibleFlowers(Vector2 myPos) // TODO: Doesn't seem to work properly (return all) but not prioritary
         {
@@ -30,14 +51,27 @@ namespace NGJ2026.Manager
             return _flowers.Where(f => f.Occupant == null && IsRayInterceptingCircle(myPos, new Vector2(f.transform.position.x, f.transform.position.z), minPlayerDist));
         }
 
+        public void KillAllButterfies()
+        {
+            for (int i = _insects.Count - 1; i >= 0; i--)
+            {
+                KillButterfly(_insects[i]);
+            }
+        }
+
+        public void KillButterfly(Butterfly butterfly)
+        {
+            if (butterfly.TargetFlower != null) butterfly.TargetFlower.Occupant = null; // Flower that was occupied is now free
+            _insects.Remove(butterfly);
+            Destroy(butterfly.gameObject);
+        }
+
         public void CatchButterfly(Butterfly butterfly)
         {
             ButterflyCaught++;
             OnInsectCaught.Invoke(butterfly);
 
-            if (butterfly.TargetFlower != null) butterfly.TargetFlower.Occupant = null; // Flower that was occupied is now free
-            _insects.Remove(butterfly);
-            Destroy(butterfly.gameObject);
+            KillButterfly(butterfly);
 
             if (!_insects.Any())
             {
@@ -65,9 +99,14 @@ namespace NGJ2026.Manager
             Assert.IsTrue(_flowers.Any(), "Couldn't find any flower! Please ensure flowers have the \"Flower\" tag");
         }
 
-        private void Start()
+        public void StartGame(InputAction.CallbackContext value)
         {
-            SpawnLevelButterflies();
+            if (value.phase == InputActionPhase.Started && !_didGameStart)
+            {
+                _didGameStart = true;
+                _gameStartHint.SetActive(false);
+                SpawnLevelButterflies();
+            }
         }
 
         private void SpawnLevelButterflies()

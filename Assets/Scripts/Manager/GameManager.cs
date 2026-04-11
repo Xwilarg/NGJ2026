@@ -4,7 +4,7 @@ using Sketch.Translation;
 using System.Linq;
 using TMPro;
 using UnityEngine;
-using UnityEngine.SceneManagement;
+using UnityEngine.Events;
 
 namespace NGJ2026.Manager
 {
@@ -25,11 +25,15 @@ namespace NGJ2026.Manager
 
         public Level CurrentLevel => _levelIndex >= Info.Levels.Length ? Info.Levels.Last() : Info.Levels[_levelIndex];
 
+        public UnityEvent OnGameStart { get; } = new();
+        public UnityEvent OnGameReset { get; } = new();
+
         public void ProgressLevel()
         {
             if (_levelIndex == 0)
             {
                 _gameTimer.Start(Info.GameDuration);
+                OnGameStart.Invoke();
             }
 
             _levelIndex++;
@@ -42,7 +46,7 @@ namespace NGJ2026.Manager
             _gameTimer = new();
             _gameTimer.OnDone.AddListener(() =>
             {
-                // TODO: Handle game over
+                OnGameReset.Invoke();
             });
 
             if (_statDisplay == null)
