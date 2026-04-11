@@ -8,6 +8,10 @@
     "settings_reset": "Recharger la partie",
     "settings_quit": "Quitter",
 
+    "score_title": "Votre score : {0}",
+    "score_name": "Votre nom d'équipe :",
+    "score_submit": "Envoyer",
+
     "game_start": "Appuie sur la barre espace pour démarrer la partie",
 
     "credits_font": "Police Cherry Bomb One sous SIL Open Font License, Version 1.1"
