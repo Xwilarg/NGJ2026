@@ -9,13 +9,13 @@ namespace NGJ2026.Manager
     {
         [SerializeField]
         private GameObject _settingsMenu;
-        [SerializeField] private Image _languageButtonSprite;
-        [SerializeField] private Sprite _defaultLanguageSprite;
-        [SerializeField] private Sprite _closeLanguageSettingsSprite;
+        [SerializeField] private RawImage _languageButtonSprite;
+        [SerializeField] private Texture2D _defaultLanguageSprite;
+        [SerializeField] private Texture2D _closeLanguageSettingsSprite;
         
         private void Awake()
         {
-            Translate.Instance.SetLanguages(new string[] { "english", "french" });
+            Translate.Instance.SetLanguages(new string[] { "english", "french", "dutch" });
 
             _settingsMenu.SetActive(false);
         }
@@ -23,7 +23,7 @@ namespace NGJ2026.Manager
         public void ToggleMenu()
         {
             _settingsMenu.SetActive(!_settingsMenu.activeInHierarchy);
-            _languageButtonSprite.sprite = _settingsMenu.activeInHierarchy ? _closeLanguageSettingsSprite : _defaultLanguageSprite;
+            _languageButtonSprite.texture = _settingsMenu.activeInHierarchy ? _closeLanguageSettingsSprite : _defaultLanguageSprite;
         }
 
         public void SetEnglishLanguage() => Translate.Instance.CurrentLanguage = "english";
