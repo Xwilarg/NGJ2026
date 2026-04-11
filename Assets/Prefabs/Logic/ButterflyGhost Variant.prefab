@@ -1,0 +1,85 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &3241707213659577652
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 289057355918802899, guid: 39788db60c1e19d4c8d272ddd9628041, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 7fcf9eb419d1d574dbfd2d7ff108ee21, type: 2}
+    - target: {fileID: 642391157261195971, guid: 39788db60c1e19d4c8d272ddd9628041, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 7f5e3e8c001c34f4ab419c6fe0523178, type: 2}
+    - target: {fileID: 1383090715607950524, guid: 39788db60c1e19d4c8d272ddd9628041, type: 3}
+      propertyPath: m_Name
+      value: ButterflyGhost Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 2157426525168688364, guid: 39788db60c1e19d4c8d272ddd9628041, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 7fcf9eb419d1d574dbfd2d7ff108ee21, type: 2}
+    - target: {fileID: 2418920385726170052, guid: 39788db60c1e19d4c8d272ddd9628041, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2905434852676733764, guid: 39788db60c1e19d4c8d272ddd9628041, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 7fcf9eb419d1d574dbfd2d7ff108ee21, type: 2}
+    - target: {fileID: 3502910960739334673, guid: 39788db60c1e19d4c8d272ddd9628041, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3502910960739334673, guid: 39788db60c1e19d4c8d272ddd9628041, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.0598
+      objectReference: {fileID: 0}
+    - target: {fileID: 3502910960739334673, guid: 39788db60c1e19d4c8d272ddd9628041, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3502910960739334673, guid: 39788db60c1e19d4c8d272ddd9628041, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3502910960739334673, guid: 39788db60c1e19d4c8d272ddd9628041, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3502910960739334673, guid: 39788db60c1e19d4c8d272ddd9628041, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3502910960739334673, guid: 39788db60c1e19d4c8d272ddd9628041, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3502910960739334673, guid: 39788db60c1e19d4c8d272ddd9628041, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3502910960739334673, guid: 39788db60c1e19d4c8d272ddd9628041, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3502910960739334673, guid: 39788db60c1e19d4c8d272ddd9628041, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4879005814028640413, guid: 39788db60c1e19d4c8d272ddd9628041, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 7fcf9eb419d1d574dbfd2d7ff108ee21, type: 2}
+    m_RemovedComponents:
+    - {fileID: 5263781058416112527, guid: 39788db60c1e19d4c8d272ddd9628041, type: 3}
+    m_RemovedGameObjects:
+    - {fileID: 1874748813724560452, guid: 39788db60c1e19d4c8d272ddd9628041, type: 3}
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 39788db60c1e19d4c8d272ddd9628041, type: 3}

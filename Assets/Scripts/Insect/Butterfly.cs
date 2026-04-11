@@ -3,7 +3,6 @@ using NUnit.Framework;
 using Sketch.Common;
 using System.Collections.Generic;
 using System.Linq;
-using System.Net.NetworkInformation;
 using UnityEngine;
 
 namespace NGJ2026.Insect
@@ -11,7 +10,7 @@ namespace NGJ2026.Insect
     public class Butterfly : MonoBehaviour
     {
         [SerializeField]
-        private GameObject _catchVfx;
+        private GameObject _ghost;
 
         [SerializeField]
         private AnimationCurve _flightCurve;
@@ -95,8 +94,9 @@ namespace NGJ2026.Insect
 
         public void Catch()
         {
-            _catchVfx.SetActive(true);
-            Destroy(gameObject, .5f);
+            var go = Instantiate(_ghost, transform.position, transform.rotation);
+            Destroy(go, 1f);
+            Destroy(gameObject);
         }
 
         private void Update()
