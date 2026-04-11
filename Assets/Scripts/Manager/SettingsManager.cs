@@ -15,7 +15,7 @@ namespace NGJ2026.Manager
         
         private void Awake()
         {
-            Translate.Instance.SetLanguages(new string[] { "english", "french", "dutch" });
+            Translate.Instance.SetLanguages(new string[] { "english", "french", "dutch", "spanish" });
 
             _settingsMenu.SetActive(false);
         }
