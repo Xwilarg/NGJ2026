@@ -2,6 +2,7 @@
 using Sketch.Common;
 using Sketch.Translation;
 using System.Linq;
+using System.Text;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
@@ -109,7 +110,11 @@ namespace NGJ2026.Manager
 
         public void UpdateLeaderboard()
         {
-            _leaderboardText.text = Translate.Instance.Tr("leaderboard_title");
+            StringBuilder str = new();
+            str.AppendLine(Translate.Instance.Tr("leaderboard_title"));
+            str.AppendLine();
+
+            _leaderboardText.text = str.ToString();
         }
 
         private void UpdateUI()
