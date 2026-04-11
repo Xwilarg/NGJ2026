@@ -29,6 +29,21 @@ namespace NGJ2026.Manager
 
         private bool _didGameStart;
 
+        private void Start()
+        {
+            GameManager.Instance.OnGameReset.AddListener(() =>
+            {
+                KillAllButterfies();
+                _didGameStart = false;
+                _gameStartHint.SetActive(true);
+            });
+            GameManager.Instance.OnGameStart.AddListener(() =>
+            {
+                ButterflyCaught = 0;
+                BeeCaught = 0;
+            });
+        }
+
         public IEnumerable<Flower> GetAllFlowers() => _flowers.Where(x => x.Occupant == null);
         public IEnumerable<Flower> GetPossibleFlowers(Vector2 myPos) // TODO: Doesn't seem to work properly (return all) but not prioritary
         {
