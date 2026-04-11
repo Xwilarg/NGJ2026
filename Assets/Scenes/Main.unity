@@ -256,7 +256,11 @@ PrefabInstance:
     - target: {fileID: 4562938426371492812, guid: fe25ca72043a52144804561ea8d0f492, type: 3}
       propertyPath: _gameStartHint
       value: 
-      objectReference: {fileID: 1994452109}
+      objectReference: {fileID: 657258881}
+    - target: {fileID: 4562938426371492812, guid: fe25ca72043a52144804561ea8d0f492, type: 3}
+      propertyPath: _tutorialObject
+      value: 
+      objectReference: {fileID: 1263650672}
     - target: {fileID: 4562938426371492812, guid: fe25ca72043a52144804561ea8d0f492, type: 3}
       propertyPath: _leaderboardText
       value: 
@@ -351,6 +355,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9541d86e2fd84c1d9990edf0852d74ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshPro
+--- !u!1 &657258881 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7574771562610684412, guid: 5ffb1d56b52b8d543a027b41fd4b6882, type: 3}
+  m_PrefabInstance: {fileID: 775992785}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &659929375
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -828,6 +837,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2957862142408628357, guid: 926cf71d346ba6a4db19cf50565ee255, type: 3}
   m_PrefabInstance: {fileID: 2319820103142831282}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1263650672 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2134258217798760872, guid: 5ffb1d56b52b8d543a027b41fd4b6882, type: 3}
+  m_PrefabInstance: {fileID: 775992785}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1380406886 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8474578693356881471, guid: a4a7975bb21c4d44a8ebba04c61cded3, type: 3}
@@ -995,11 +1009,6 @@ MonoBehaviour:
 Transform:
   m_CorrespondingSourceObject: {fileID: 670598981707414611, guid: a4a7975bb21c4d44a8ebba04c61cded3, type: 3}
   m_PrefabInstance: {fileID: 163477009414421960}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1994452109 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 557357639386500299, guid: 5ffb1d56b52b8d543a027b41fd4b6882, type: 3}
-  m_PrefabInstance: {fileID: 775992785}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2018395864
 PrefabInstance:

@@ -22,10 +22,10 @@ namespace NGJ2026.Manager
         [SerializeField]
         private GameObject _gameStartHint;
 
-        [Header("Leaderboard")]
         [SerializeField]
-        private TMP_Text _leaderboardText;
+        private GameObject _tutorialObject;
 
+        [Header("Leaderboard")]
         [SerializeField]
         private TMP_Text _ingameLeaderboardText;
 
@@ -87,16 +87,23 @@ namespace NGJ2026.Manager
                 else
                 {
                     _gameStartHint.SetActive(true);
-                    _leaderboardText.gameObject.SetActive(false);
+                    //_leaderboardText.gameObject.SetActive(false);
                 }
                 _scoreText.text = Translate.Instance.Tr("score_title", InsectManager.Instance.ButterflyCaught.ToString());
             });
 
             OnGameSetup.AddListener(() =>
             {
-                _leaderboardText.gameObject.SetActive(false);
+                //_leaderboardText.gameObject.SetActive(false);
                 _gameStartHint.SetActive(false);
                 _submitPanel.SetActive(false);
+
+                _tutorialObject.SetActive(true);
+            });
+
+            OnGameStart.AddListener(() =>
+            {
+                _tutorialObject.SetActive(false);
             });
 
             if (_statDisplay == null)
@@ -124,14 +131,14 @@ namespace NGJ2026.Manager
             _submitPanel.SetActive(false);
             UpdateLeaderboard();
             _gameStartHint.SetActive(true);
-            _leaderboardText.gameObject.SetActive(true);
+            //_leaderboardText.gameObject.SetActive(true);
         }
 
         public void SkipScore()
         {
             _submitPanel.SetActive(false);
             _gameStartHint.SetActive(true);
-            _leaderboardText.gameObject.SetActive(true);
+            //_leaderboardText.gameObject.SetActive(true);
         }
 
         private void Update()
@@ -143,13 +150,13 @@ namespace NGJ2026.Manager
 
         public void UpdateLeaderboard()
         {
-            StringBuilder str = new();
+            /*StringBuilder str = new();
             str.AppendLine(Translate.Instance.Tr("leaderboard_title"));
             str.AppendLine();
             foreach (var score in PersistencyManager<SaveData>.Instance.SaveData.BestScores)
             {
                 str.AppendLine(Translate.Instance.Tr("leaderboard_format", score.Name, score.Value.ToString()));
-            }
+            }*/
 
             StringBuilder strGame = new();
             strGame.AppendLine(Translate.Instance.Tr("leaderboard_title"));
@@ -159,7 +166,7 @@ namespace NGJ2026.Manager
                 strGame.AppendLine(Translate.Instance.Tr("leaderboard_format", score.Name, score.Value.ToString()));
             }
 
-            _leaderboardText.text = str.ToString();
+            //_leaderboardText.text = str.ToString();
             _ingameLeaderboardText.text = strGame.ToString();
         }
 

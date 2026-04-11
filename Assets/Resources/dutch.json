@@ -13,6 +13,9 @@
     "leaderboard_title": "Beste scores",
     "leaderboard_format": "{0}: {1}",
 
+    "help_you": "You",
+    "help_friend": "Friend",
+
     "game_start": "Druk op 'spatiebalk' om het spel te starten`",
 
     "credits_font": "Font Cherry Bomb One under the SIL Open Font License, Version 1.1"
