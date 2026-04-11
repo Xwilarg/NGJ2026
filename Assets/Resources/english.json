@@ -1,7 +1,7 @@
 {
     "language": "English",
 
-    "stat_timer": "Timer: {0]:{1}",
+    "stat_timer": "Timer: {0}:{1}",
     "stat_score": "Score: {0}",
 
     "settings_languages": "Languages",
