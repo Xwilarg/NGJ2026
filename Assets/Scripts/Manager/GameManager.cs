@@ -194,7 +194,7 @@ namespace NGJ2026.Manager
 
         public void OnReset(InputAction.CallbackContext value)
         {
-            if (value.phase == InputActionPhase.Started)
+            if (value.phase == InputActionPhase.Started && !IsScorePanelOpen)
             {
                 SceneManager.LoadScene("Main");
             }
