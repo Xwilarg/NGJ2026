@@ -664,6 +664,10 @@ PrefabInstance:
       propertyPath: m_enableAutoSizing
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2287739056035658969, guid: 5ffb1d56b52b8d543a027b41fd4b6882, type: 3}
+      propertyPath: m_CharacterLimit
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 2385774618222334466, guid: 5ffb1d56b52b8d543a027b41fd4b6882, type: 3}
       propertyPath: m_RaycastTarget
       value: 0
