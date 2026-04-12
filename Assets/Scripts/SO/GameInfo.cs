@@ -27,5 +27,6 @@ namespace NGJ2026.SO
     {
         public int ButterflyCount;
         public bool IsStatic;
+        public bool IsSpawningContinue;
     }
 }

@@ -74,7 +74,11 @@ namespace NGJ2026.Manager
 
             KillButterfly(butterfly, hardDelete: false);
 
-            if (!_insects.Any())
+            if (GameManager.Instance.CurrentLevel.IsSpawningContinue)
+            {
+                SpawnButterfly();
+            }
+            else if (!_insects.Any())
             {
                 GameManager.Instance.ProgressLevel();
                 SpawnLevelButterflies();

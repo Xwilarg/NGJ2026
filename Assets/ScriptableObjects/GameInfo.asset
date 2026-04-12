@@ -16,12 +16,16 @@ MonoBehaviour:
   Levels:
   - ButterflyCount: 1
     IsStatic: 1
+    IsSpawningContinue: 0
   - ButterflyCount: 1
     IsStatic: 0
+    IsSpawningContinue: 0
   - ButterflyCount: 1
     IsStatic: 0
+    IsSpawningContinue: 0
   - ButterflyCount: 2
     IsStatic: 0
+    IsSpawningContinue: 1
   MinDistanceWithPlayer: 1.5
   DelayBeforeInsectRestEnd:
     Min: 2
