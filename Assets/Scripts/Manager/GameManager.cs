@@ -97,6 +97,7 @@ namespace NGJ2026.Manager
                 ReachedGameHalf = false;
                 ReachedGameTwoThird = false;
                 _levelIndex = 0;
+                _inputField.text = string.Empty;
                 if (PersistencyManager<SaveData>.Instance.SaveData.IsInLeaderboard(InsectManager.Instance.ButterflyCaught))
                 {
                     var place = PersistencyManager<SaveData>.Instance.SaveData.GetPlace(InsectManager.Instance.ButterflyCaught);
