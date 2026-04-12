@@ -142,8 +142,7 @@ namespace NGJ2026.Manager
             }
 
             var c = InsectManager.Instance.ButterflyCaught;
-            PersistencyManager<SaveData>.Instance.SaveData.AddScore(_inputField.text, c);
-            var place = PersistencyManager<SaveData>.Instance.SaveData.GetPlace(c);
+            int place = PersistencyManager<SaveData>.Instance.SaveData.AddScore(_inputField.text, c);
             string prefix = $"score_{Math.Clamp(place, 1, 4)}";
             _youGotPlace.text = Translate.Instance.Tr("score_rank", $"{place}{Translate.Instance.Tr(prefix)}");
 
