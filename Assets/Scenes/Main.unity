@@ -612,6 +612,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 926827307407425150, guid: 5ffb1d56b52b8d543a027b41fd4b6882, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 375
+      objectReference: {fileID: 0}
+    - target: {fileID: 926827307407425150, guid: 5ffb1d56b52b8d543a027b41fd4b6882, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 326.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 926827307407425150, guid: 5ffb1d56b52b8d543a027b41fd4b6882, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 926827307407425150, guid: 5ffb1d56b52b8d543a027b41fd4b6882, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -40
+      objectReference: {fileID: 0}
     - target: {fileID: 1281081138045923725, guid: 5ffb1d56b52b8d543a027b41fd4b6882, type: 3}
       propertyPath: m_fontSize
       value: 25
@@ -804,6 +820,22 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 019d391a216249e478e7b104378576ef, type: 3}
+    - target: {fileID: 5410368434267483966, guid: 5ffb1d56b52b8d543a027b41fd4b6882, type: 3}
+      propertyPath: m_fontSize
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 5410368434267483966, guid: 5ffb1d56b52b8d543a027b41fd4b6882, type: 3}
+      propertyPath: m_fontSizeMax
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 5410368434267483966, guid: 5ffb1d56b52b8d543a027b41fd4b6882, type: 3}
+      propertyPath: m_fontSizeMin
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 5410368434267483966, guid: 5ffb1d56b52b8d543a027b41fd4b6882, type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5921144850434385277, guid: 5ffb1d56b52b8d543a027b41fd4b6882, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 15.680054
