@@ -17,6 +17,7 @@ namespace NGJ2026.Manager
 
         [SerializeField]
         private CopyTransform _playerCT;
+        public Transform PlayerCameraPos => _playerCT.transform;
 
         public int ButterflyCaught { private set; get; }
         public int BeeCaught { private set; get; }
