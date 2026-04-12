@@ -1,31 +1,31 @@
 {
-    "language": "English",
+    "language": "Dansk",
 
-    "stat_timer": "Timer: {0}:{1}",
+    "stat_timer": "Tid: {0}:{1}",
     "stat_score": "Score: {0}",
 
-    "score_title": "Your score: {0}",
-    "score_name": "Enter your team name:",
-    "score_name_hint": "Team name",
-    "score_submit": "Submit",
-    "score_skip": "Skip",
-    "score_rank": "You got the {0} place",
-    "score_1": "st",
-    "score_2": "nd",
-    "score_3": "rd",
-    "score_4": "th",
+    "score_title": "Din score: {0}",
+    "score_name": "Skriv dit navn her:",
+    "score_name_hint": "Hold navn",
+    "score_submit": "Ferdig",
+    "score_skip": "Spring over",
+    "score_rank": "Du er på {0} pladsen",
+    "score_1": ".",
+    "score_2": ".",
+    "score_3": ".",
+    "score_4": ".",
 
-    "leaderboard_title": "Leaderboard",
+    "leaderboard_title": "Rangliste",
     "leaderboard_format": "{0}: {1}",
-    
-    "game_start": "Press 'space' to start",
-    "catch_me": "Catch me!",
 
-    "help_1": "Hi Ghost! Your human friend in VR can't see the butterflies.",
-    "help_2": "Help them catch as many as possible in the time limit!",
+    "game_start": "Tryk på 'Mellemrumstasten' for at starte spillet",
+    "catch_me": "Fang mig!",
 
-    "help_you": "You",
-    "help_friend": "Friend",
+    "help_1": "Hej spøgelse! Din menneske ven i VR kan ikke se sommerfuglene",
+    "help_2": "Hjælp dem med at fange så mange som muligt inden for tidsgrænsen",
+
+    "help_you": "Dig",
+    "help_friend": "Ven",
 
     "vr_plug": "Please plug your VR headset on",
 
