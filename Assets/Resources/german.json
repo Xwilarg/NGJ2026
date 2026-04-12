@@ -1,0 +1,33 @@
+{
+    "language": "Deutsch",
+
+    "stat_timer": "Zeit: {0}:{1}",
+    "stat_score": "Punkte: {0}",
+
+    "score_title": "Deine Punkte: {0}",
+    "score_name": "Gib deinen Namen ein:",
+    "score_name_hint": "Team-Name",
+    "score_submit": "Fertig",
+    "score_skip": "Überspringen",
+    "score_rank": "Du hast den {0} Platz erreicht!",
+    "score_1": ".",
+    "score_2": ".",
+    "score_3": ".",
+    "score_4": ".",
+
+    "leaderboard_title": "Rangliste",
+    "leaderboard_format": "{0}: {1}",
+    
+    "game_start": "Drücke die Leertaste zum Starten",
+    "catch_me": "Fang mich!",
+
+    "help_1": "Hallo Geist! Dein Menschenfreund im VR-Headset kann die Schmetterlinge nicht sehen.",
+    "help_2": "Hilf ihm so viele wie möglich zu fangen!",
+
+    "help_you": "Du :)",
+    "help_friend": "Freund",
+
+    "vr_plug": "Setze dein VR-Headset auf",
+
+    "credits_font": "Font Cherry Bomb One under the SIL Open Font License, Version 1.1"
+}
