@@ -725,6 +725,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6692856379455579138, guid: 3a75ce3273ca82f4a9da74234e4e0570, type: 3}
+      propertyPath: m_RenderPostProcessing
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -848,6 +852,50 @@ PrefabInstance:
       propertyPath: m_Name
       value: Environment
       objectReference: {fileID: 0}
+    - target: {fileID: 2303535800440781025, guid: a4a7975bb21c4d44a8ebba04c61cded3, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 2603112419683861557, guid: a4a7975bb21c4d44a8ebba04c61cded3, type: 3}
+      propertyPath: m_fontColor.b
+      value: 0.64705884
+      objectReference: {fileID: 0}
+    - target: {fileID: 2603112419683861557, guid: a4a7975bb21c4d44a8ebba04c61cded3, type: 3}
+      propertyPath: m_fontColor.g
+      value: 0.64705884
+      objectReference: {fileID: 0}
+    - target: {fileID: 2603112419683861557, guid: a4a7975bb21c4d44a8ebba04c61cded3, type: 3}
+      propertyPath: m_fontColor.r
+      value: 0.8784314
+      objectReference: {fileID: 0}
+    - target: {fileID: 2603112419683861557, guid: a4a7975bb21c4d44a8ebba04c61cded3, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4289045984
+      objectReference: {fileID: 0}
+    - target: {fileID: 3113045191050590433, guid: a4a7975bb21c4d44a8ebba04c61cded3, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -11.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 4516431261969695324, guid: a4a7975bb21c4d44a8ebba04c61cded3, type: 3}
+      propertyPath: m_fontColor.b
+      value: 0.64705884
+      objectReference: {fileID: 0}
+    - target: {fileID: 4516431261969695324, guid: a4a7975bb21c4d44a8ebba04c61cded3, type: 3}
+      propertyPath: m_fontColor.g
+      value: 0.64705884
+      objectReference: {fileID: 0}
+    - target: {fileID: 4516431261969695324, guid: a4a7975bb21c4d44a8ebba04c61cded3, type: 3}
+      propertyPath: m_fontColor.r
+      value: 0.8784314
+      objectReference: {fileID: 0}
+    - target: {fileID: 4516431261969695324, guid: a4a7975bb21c4d44a8ebba04c61cded3, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4289045984
+      objectReference: {fileID: 0}
+    - target: {fileID: 4589658487489708856, guid: a4a7975bb21c4d44a8ebba04c61cded3, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.25
+      objectReference: {fileID: 0}
     - target: {fileID: 5021858103564984905, guid: a4a7975bb21c4d44a8ebba04c61cded3, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -889,8 +937,30 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 1589680765947158940, guid: a4a7975bb21c4d44a8ebba04c61cded3, type: 3}
+    - {fileID: 7918061140861348588, guid: a4a7975bb21c4d44a8ebba04c61cded3, type: 3}
+    - {fileID: 1072608818777876850, guid: a4a7975bb21c4d44a8ebba04c61cded3, type: 3}
+    - {fileID: 5536790485011896834, guid: a4a7975bb21c4d44a8ebba04c61cded3, type: 3}
+    - {fileID: 5998088790898940633, guid: a4a7975bb21c4d44a8ebba04c61cded3, type: 3}
+    - {fileID: 3786131161377256355, guid: a4a7975bb21c4d44a8ebba04c61cded3, type: 3}
+    - {fileID: 6924948059632720546, guid: a4a7975bb21c4d44a8ebba04c61cded3, type: 3}
+    - {fileID: 7573305232613832727, guid: a4a7975bb21c4d44a8ebba04c61cded3, type: 3}
+    - {fileID: 2393046626166711078, guid: a4a7975bb21c4d44a8ebba04c61cded3, type: 3}
+    - {fileID: 3104983197803396072, guid: a4a7975bb21c4d44a8ebba04c61cded3, type: 3}
+    - {fileID: 3861508704072198220, guid: a4a7975bb21c4d44a8ebba04c61cded3, type: 3}
+    - {fileID: 464489767930039889, guid: a4a7975bb21c4d44a8ebba04c61cded3, type: 3}
+    - {fileID: 7799746379946759596, guid: a4a7975bb21c4d44a8ebba04c61cded3, type: 3}
+    - {fileID: 6573780774420139086, guid: a4a7975bb21c4d44a8ebba04c61cded3, type: 3}
+    - {fileID: 5101213220794976944, guid: a4a7975bb21c4d44a8ebba04c61cded3, type: 3}
+    - {fileID: 1291837667262507416, guid: a4a7975bb21c4d44a8ebba04c61cded3, type: 3}
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 5021858103564984905, guid: a4a7975bb21c4d44a8ebba04c61cded3, type: 3}
+      insertIndex: 69
+      addedObject: {fileID: 1158244788}
+    - targetCorrespondingSourceObject: {fileID: 4899787324634397463, guid: a4a7975bb21c4d44a8ebba04c61cded3, type: 3}
+      insertIndex: 22
+      addedObject: {fileID: 222752335}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 5108870159250516115, guid: a4a7975bb21c4d44a8ebba04c61cded3, type: 3}
       insertIndex: -1
