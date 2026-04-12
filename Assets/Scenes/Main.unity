@@ -951,6 +951,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3223518654967549771, guid: 926cf71d346ba6a4db19cf50565ee255, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.063
+      objectReference: {fileID: 0}
+    - target: {fileID: 3223518654967549771, guid: 926cf71d346ba6a4db19cf50565ee255, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.365
+      objectReference: {fileID: 0}
+    - target: {fileID: 3223518654967549771, guid: 926cf71d346ba6a4db19cf50565ee255, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 2.351
+      objectReference: {fileID: 0}
     - target: {fileID: 7067524292313878127, guid: 926cf71d346ba6a4db19cf50565ee255, type: 3}
       propertyPath: m_Name
       value: ButterFlyDestinations
