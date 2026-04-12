@@ -1,0 +1,33 @@
+{
+    "language": "ÖSTERREICHISCH",
+
+    "stat_timer": "So fü host no: {0}:{1}",
+    "stat_score": "Schnitzel: {0}",
+
+    "score_title": "Oida moch schneller: {0}",
+    "score_name": "A gibst ma dein Nomen:",
+    "score_name_hint": "Deine Hawara",
+    "score_submit": "Fedisch",
+    "score_skip": "Überspringen",
+    "score_rank": "{0} bist worden!",
+    "score_1": "er",
+    "score_2": "er",
+    "score_3": "er",
+    "score_4": "er",
+
+    "leaderboard_title": "Die GOATs",
+    "leaderboard_format": "{0}: {1}",
+    
+    "game_start": "A druck amol die Leertostn",
+    "catch_me": "Schnitzel!",
+
+    "help_1": "Hallo Österreicher! Dei Hawara im VR-Headset sigt die Schmetterlinge nit.",
+    "help_2": "Hülf ihm amol. Sunst gibts ka Obendessen!",
+
+    "help_you": "Du",
+    "help_friend": "Dei Hawara",
+
+    "vr_plug": "Setze dein VR-Headset auf",
+
+    "credits_font": "Font Cherry Bomb One under the SIL Open Font License, Version 1.1"
+}
