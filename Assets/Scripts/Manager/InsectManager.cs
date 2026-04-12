@@ -35,6 +35,8 @@ namespace NGJ2026.Manager
             {
                 KillAllButterfies();
                 _didGameStart = false;
+
+                _playerCT.StartFollowingOrigin();
             });
             GameManager.Instance.OnGameStart.AddListener(() =>
             {
