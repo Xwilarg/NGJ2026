@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{97FC1970-4CB4-47A3-92F8-7E1A5231D52C}" SchemaVersion="133">
+	<Events>
+		<WorkUnit Name="Default Work Unit" ID="{97FC1970-4CB4-47A3-92F8-7E1A5231D52C}" PersistMode="Standalone">
+			<ChildrenList>
+				<Event Name="PlaySwoosh" ID="{7F599CA8-C70B-4283-AA88-C28C61FAC921}">
+					<ChildrenList>
+						<Action Name="" ID="{54A4FE74-75AF-4E2F-83C9-F482162BDEB9}" ShortID="655644741">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="whoosh3" ID="{7C71763E-F7EE-4EF3-B1C5-E51182DE84A4}" WorkUnitID="{C6A37CDA-F1F6-491E-B194-3165840394A6}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="PlayEnvironment" ID="{68045E1B-E3A0-4890-A2DA-E3C34E6341D9}">
+					<ChildrenList>
+						<Action Name="" ID="{4215278D-03CF-4B95-BDC1-48E3763C9FE5}" ShortID="696486580">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Step-001" ID="{CEFF7444-AB08-4B13-A5FD-B7C38BA98D35}" WorkUnitID="{C6A37CDA-F1F6-491E-B194-3165840394A6}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="StopEnvironment" ID="{8C9F9ABE-5CD3-4201-A85A-DCA511F8FFD9}">
+					<ChildrenList>
+						<Action Name="" ID="{74C53010-DB7A-4F65-A164-9EAD1E913C2C}" ShortID="554933778">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Step-001" ID="{CEFF7444-AB08-4B13-A5FD-B7C38BA98D35}" WorkUnitID="{C6A37CDA-F1F6-491E-B194-3165840394A6}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+			</ChildrenList>
+		</WorkUnit>
+	</Events>
+</WwiseDocument>

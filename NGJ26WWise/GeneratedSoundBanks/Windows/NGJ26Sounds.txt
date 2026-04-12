@@ -1,0 +1,12 @@
+Event	ID	Name			Wwise Object Path	Notes
+	1312173514	PlaySwoosh			\Default Work Unit\PlaySwoosh	
+	1738989728	StopEnvironment			\Default Work Unit\StopEnvironment	
+	2658770214	PlayEnvironment			\Default Work Unit\PlayEnvironment	
+
+Game Parameter	ID	Name			Wwise Object Path	Notes
+	2577379883	netSwoosh			\Default Work Unit\netSwoosh	
+
+In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	147310540	Step-001	.cache\39\{3920D4F3-A42F-00D2-879B-65509EC4164A}.wem		\Containers\Default Work Unit\Ambience\Step-001		43085944
+	379140173	whoosh3	.cache\FE\{FE31CBEF-D9C7-B246-7F97-3E24FDD220A7}.wem		\Containers\Default Work Unit\net\whoosh3		5581536
+

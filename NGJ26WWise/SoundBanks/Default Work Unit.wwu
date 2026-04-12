@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{93190C34-DF11-4349-BEE8-80B2774352FA}" SchemaVersion="133">
+	<SoundBanks>
+		<WorkUnit Name="Default Work Unit" ID="{93190C34-DF11-4349-BEE8-80B2774352FA}" PersistMode="Standalone">
+			<ChildrenList>
+				<SoundBank Name="NGJ26Sounds" ID="{8BEA3182-A33A-4F98-A666-D3F1D427ABDF}">
+					<ObjectInclusionList>
+						<ObjectRef Name="StopEnvironment" ID="{8C9F9ABE-5CD3-4201-A85A-DCA511F8FFD9}" WorkUnitID="{97FC1970-4CB4-47A3-92F8-7E1A5231D52C}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="PlaySwoosh" ID="{7F599CA8-C70B-4283-AA88-C28C61FAC921}" WorkUnitID="{97FC1970-4CB4-47A3-92F8-7E1A5231D52C}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="PlayEnvironment" ID="{68045E1B-E3A0-4890-A2DA-E3C34E6341D9}" WorkUnitID="{97FC1970-4CB4-47A3-92F8-7E1A5231D52C}" Origin="Manual" Filter="7"/>
+					</ObjectInclusionList>
+					<ObjectExclusionList/>
+					<GameSyncExclusionList/>
+				</SoundBank>
+			</ChildrenList>
+		</WorkUnit>
+	</SoundBanks>
+</WwiseDocument>

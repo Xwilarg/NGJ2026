@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{C6A37CDA-F1F6-491E-B194-3165840394A6}" SchemaVersion="133">
+	<Containers>
+		<WorkUnit Name="Default Work Unit" ID="{C6A37CDA-F1F6-491E-B194-3165840394A6}" PersistMode="Standalone">
+			<ChildrenList>
+				<PropertyContainer Name="Ambience" ID="{A1C90821-1902-4554-97D9-C8DE60F6D9D1}" ShortID="832728575">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{BE543C2E-282A-42AF-B1A6-136B9FA9195D}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{FFD3C005-6CA5-49D1-95E9-1EBB9E4D6B80}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<Sound Name="Step-001" ID="{CEFF7444-AB08-4B13-A5FD-B7C38BA98D35}" ShortID="293288982">
+							<PropertyList>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>11</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{BE543C2E-282A-42AF-B1A6-136B9FA9195D}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{FFD3C005-6CA5-49D1-95E9-1EBB9E4D6B80}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Step-001" ID="{671C4084-A97B-49FE-B19E-B1C4A35E3E3D}">
+									<Language>SFX</Language>
+									<AudioFile>Step-001.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="147310540"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Step-001" ID="{671C4084-A97B-49FE-B19E-B1C4A35E3E3D}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+					</ChildrenList>
+				</PropertyContainer>
+				<PropertyContainer Name="net" ID="{35AA946E-F0B4-434D-AF4B-418857DF0C7C}" ShortID="259118531">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{BE543C2E-282A-42AF-B1A6-136B9FA9195D}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{FFD3C005-6CA5-49D1-95E9-1EBB9E4D6B80}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<Sound Name="whoosh3" ID="{7C71763E-F7EE-4EF3-B1C5-E51182DE84A4}" ShortID="414186285">
+							<PropertyList>
+								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>9</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{BE543C2E-282A-42AF-B1A6-136B9FA9195D}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{FFD3C005-6CA5-49D1-95E9-1EBB9E4D6B80}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="whoosh3" ID="{B529D11A-88BA-42C9-B8B5-0B7CC32F8C73}">
+									<Language>SFX</Language>
+									<AudioFile>whoosh3.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="379140173"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ObjectLists>
+								<ObjectList Name="RTPC">
+									<RTPC Name="" ID="{226EDC9C-EFB2-45EA-AD9B-4E3756721447}" ShortID="811238074">
+										<PropertyList>
+											<Property Name="PropertyName" Type="string" Value="Volume"/>
+										</PropertyList>
+										<ReferenceList>
+											<Reference Name="ControlInput">
+												<ObjectRef Name="netSwoosh" ID="{44DE068C-098F-48B5-8B95-12892FF37564}" WorkUnitID="{664AD390-D0CD-47F4-85A6-B38C39138996}"/>
+											</Reference>
+											<Reference Name="Curve">
+												<Custom>
+													<Curve Name="" ID="{2EBA7436-7031-4E7D-8896-AD047F15A1FD}">
+														<PropertyList>
+															<Property Name="Flags" Type="int32" Value="3"/>
+														</PropertyList>
+														<PointList>
+															<Point>
+																<XPos>0</XPos>
+																<YPos>-4.339</YPos>
+																<Flags>5</Flags>
+																<SegmentShape>Exp3</SegmentShape>
+															</Point>
+															<Point>
+																<XPos>2</XPos>
+																<YPos>200</YPos>
+																<Flags>37</Flags>
+															</Point>
+														</PointList>
+													</Curve>
+												</Custom>
+											</Reference>
+										</ReferenceList>
+									</RTPC>
+								</ObjectList>
+							</ObjectLists>
+							<ActiveSourceList>
+								<ActiveSource Name="whoosh3" ID="{B529D11A-88BA-42C9-B8B5-0B7CC32F8C73}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+					</ChildrenList>
+				</PropertyContainer>
+			</ChildrenList>
+		</WorkUnit>
+	</Containers>
+</WwiseDocument>

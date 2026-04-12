@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{664AD390-D0CD-47F4-85A6-B38C39138996}" SchemaVersion="133">
+	<GameParameters>
+		<WorkUnit Name="Default Work Unit" ID="{664AD390-D0CD-47F4-85A6-B38C39138996}" PersistMode="Standalone">
+			<ChildrenList>
+				<GameParameter Name="netSwoosh" ID="{44DE068C-098F-48B5-8B95-12892FF37564}">
+					<PropertyList>
+						<Property Name="InitialValue" Type="Real64" Value="0"/>
+						<Property Name="Max" Type="Real64" Value="2"/>
+					</PropertyList>
+				</GameParameter>
+			</ChildrenList>
+		</WorkUnit>
+	</GameParameters>
+</WwiseDocument>
