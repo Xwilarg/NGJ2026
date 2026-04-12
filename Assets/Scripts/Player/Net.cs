@@ -44,6 +44,7 @@ namespace NGJ2026.Player
         private void Update()
         {
             _velocities.Add(new() { Time = Time.unscaledTime, Value = (_velRefPoint.position - _lastRefPoint).magnitude });
+            _lastRefPoint = _velRefPoint.position;
 
             _velocities.RemoveAll(x => Time.unscaledTime - x.Time > 1f);
 
