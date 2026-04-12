@@ -124,7 +124,7 @@ namespace NGJ2026.Manager
             }
         }
 
-        private void SpawnButterfly()
+        public void SpawnButterfly()
         {
             var go = Instantiate(_butterflyPrefab);
             _insects.Add(go.GetComponent<Butterfly>());
