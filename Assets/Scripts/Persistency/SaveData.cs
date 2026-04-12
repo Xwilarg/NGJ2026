@@ -35,7 +35,7 @@ namespace NGJ2026.Persistency
             {
                 if (value > BestScores[i].Value)
                 {
-                    return value + 1;
+                    return i + 1;
                 }
             }
             return -1; // Shouldn't happen
