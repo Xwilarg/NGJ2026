@@ -29,6 +29,11 @@ namespace NGJ2026.Manager
 
         private bool _didGameStart;
 
+        [SerializeField]
+        private AudioSource _musicAmb;
+        [SerializeField]
+        private AudioSource _musicMain;
+
         private void Start()
         {
             GameManager.Instance.OnGameReset.AddListener(() =>
@@ -84,6 +89,13 @@ namespace NGJ2026.Manager
                 SpawnLevelButterflies();
             }
             ButterflyCaught++;
+
+            //Hacky music code
+            _musicAmb.Stop();
+            if(!_musicMain.isPlaying)
+            {
+                _musicMain.Play();
+            }
         }
 
         // https://stackoverflow.com/a/76246428
