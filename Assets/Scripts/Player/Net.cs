@@ -11,6 +11,17 @@ namespace NGJ2026.Player
         private Vector3 _lastRefPoint;
         [SerializeField]
         private Transform _velRefPoint;
+        [SerializeField]
+        private AudioSource _sfxNet;
+        private float _netStartingVolume;
+        [SerializeField]
+        private float _maxSfxVelocity;
+        [SerializeField]
+        private AudioSource _sfxCatchButterfly;
+        [SerializeField]
+        private float _minSfxPitch = 1f;
+        [SerializeField]
+        private float _maxSfxPitch = 1f;
 
         private readonly List<FloatDT> _velocities = new();
 
@@ -19,12 +30,15 @@ namespace NGJ2026.Player
             if (other.TryGetComponent<Butterfly>(out var b))
             {
                 InsectManager.Instance.CatchButterfly(b);
+                _sfxCatchButterfly.Play();
             }
         }
 
         private void Awake()
         {
             _lastRefPoint = _velRefPoint.position;
+
+            _netStartingVolume = _sfxNet.volume;
         }
 
         private void Update()
@@ -33,6 +47,13 @@ namespace NGJ2026.Player
             _lastRefPoint = _velRefPoint.position;
 
             _velocities.RemoveAll(x => Time.unscaledTime - x.Time > 1f);
+
+            if(_sfxNet)
+            {
+                float sfxVelocity = Mathf.Clamp01(GetSumVelocity() / _maxSfxVelocity);
+                _sfxNet.volume = _netStartingVolume * sfxVelocity;
+                _sfxNet.pitch = Mathf.Lerp(_minSfxPitch, _maxSfxPitch, sfxVelocity);
+            }
         }
 
         public float GetSumVelocity()
