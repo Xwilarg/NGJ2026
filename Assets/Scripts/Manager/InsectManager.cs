@@ -42,6 +42,9 @@ namespace NGJ2026.Manager
                 _didGameStart = false;
 
                 _playerCT.StartFollowingOrigin();
+
+                _musicMain.Stop();
+                _musicAmb.Play();
             });
             GameManager.Instance.OnGameStart.AddListener(() =>
             {
