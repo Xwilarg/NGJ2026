@@ -18,9 +18,9 @@ namespace NGJ2026.Player
         [SerializeField]
         private AudioSource _sfxCatchButterfly;
         [SerializeField]
-        private float _minSfxPitch = 1f;
+        private float _minSfxPitch = .8f;
         [SerializeField]
-        private float _maxSfxPitch = 1f;
+        private float _maxSfxPitch = 1.2f;
 
         private readonly List<FloatDT> _velocities = new();
 
