@@ -25,6 +25,8 @@ namespace NGJ2026.Manager
         [SerializeField]
         private GameObject _gameStartHint;
 
+        
+
         [SerializeField]
         private GameObject _tutorialObject;
 
@@ -95,8 +97,13 @@ namespace NGJ2026.Manager
                 ReachedGameHalf = false;
                 ReachedGameTwoThird = false;
                 _levelIndex = 0;
+                _inputField.text = string.Empty;
                 if (PersistencyManager<SaveData>.Instance.SaveData.IsInLeaderboard(InsectManager.Instance.ButterflyCaught))
                 {
+                    var place = PersistencyManager<SaveData>.Instance.SaveData.GetPlace(InsectManager.Instance.ButterflyCaught);
+                    string prefix = $"score_{Math.Clamp(place, 1, 4)}";
+                    _youGotPlace.text = Translate.Instance.Tr("score_rank", $"{place}{Translate.Instance.Tr(prefix)}");
+
                     _submitPanel.SetActive(true);
                 }
                 else
@@ -142,9 +149,7 @@ namespace NGJ2026.Manager
             }
 
             var c = InsectManager.Instance.ButterflyCaught;
-            int place = PersistencyManager<SaveData>.Instance.SaveData.AddScore(_inputField.text, c);
-            string prefix = $"score_{Math.Clamp(place, 1, 4)}";
-            _youGotPlace.text = Translate.Instance.Tr("score_rank", $"{place}{Translate.Instance.Tr(prefix)}");
+            PersistencyManager<SaveData>.Instance.SaveData.AddScore(_inputField.text, c);
 
             _submitPanel.SetActive(false);
             UpdateLeaderboard();
