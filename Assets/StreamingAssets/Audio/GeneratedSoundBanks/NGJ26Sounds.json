@@ -1,0 +1,85 @@
+{
+ "SoundBanksInfo": {
+  "Platform": "Windows",
+  "BasePlatform": "Windows",
+  "SchemaVersion": "16",
+  "SoundBankVersion": "172",
+  "SoundBanks": [
+   {
+    "Id": "1152069914",
+    "Type": "User",
+    "GUID": "{8BEA3182-A33A-4F98-A666-D3F1D427ABDF}",
+    "Language": "SFX",
+    "Hash": "{BDA02C4D-2F0C-E52B-005C-DE40914473C6}",
+    "ObjectPath": "\\SoundBanks\\Default Work Unit\\NGJ26Sounds",
+    "ShortName": "NGJ26Sounds",
+    "Path": "NGJ26Sounds.bnk",
+    "Media": [
+     {
+      "Id": "147310540",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Step-001.wav",
+      "CachePath": "39/{3920D4F3-A42F-00D2-879B-65509EC4164A}.wem"
+     },
+     {
+      "Id": "379140173",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "whoosh3.wav",
+      "CachePath": "FE/{FE31CBEF-D9C7-B246-7F97-3E24FDD220A7}.wem"
+     }
+    ],
+    "Events": [
+     {
+      "Id": "2658770214",
+      "Name": "PlayEnvironment",
+      "ObjectPath": "\\Events\\Default Work Unit\\PlayEnvironment",
+      "GUID": "{68045E1B-E3A0-4890-A2DA-E3C34E6341D9}",
+      "DurationType": "OneShot",
+      "DurationMin": "224.40546",
+      "DurationMax": "224.40546",
+      "MediaRefs": [
+       {
+        "Id": "147310540"
+       }
+      ]
+     },
+     {
+      "Id": "1312173514",
+      "Name": "PlaySwoosh",
+      "ObjectPath": "\\Events\\Default Work Unit\\PlaySwoosh",
+      "GUID": "{7F599CA8-C70B-4283-AA88-C28C61FAC921}",
+      "DurationType": "Infinite",
+      "MediaRefs": [
+       {
+        "Id": "379140173"
+       }
+      ]
+     },
+     {
+      "Id": "1738989728",
+      "Name": "StopEnvironment",
+      "ObjectPath": "\\Events\\Default Work Unit\\StopEnvironment",
+      "GUID": "{8C9F9ABE-5CD3-4201-A85A-DCA511F8FFD9}",
+      "MaxAttenuation": "0",
+      "DurationType": "OneShot",
+      "DurationMin": "0",
+      "DurationMax": "0"
+     }
+    ],
+    "GameParameters": [
+     {
+      "Id": "2577379883",
+      "Name": "netSwoosh",
+      "ObjectPath": "\\Game Parameters\\Default Work Unit\\netSwoosh",
+      "GUID": "{44DE068C-098F-48B5-8B95-12892FF37564}"
+     }
+    ]
+   }
+  ],
+  "FileHash": "{C7DC5E99-E94B-8622-D94E-70C24378EA11}"
+ }
+}

@@ -79,6 +79,7 @@ MonoBehaviour:
   - {fileID: -6374083276346230520}
   - {fileID: -1615619758184012592}
   - {fileID: -3467875477523673295}
+  - {fileID: -3568433431716766845}
   - {fileID: 509500675325309802}
   customLoaderName: 
   m_renderMode: 1
@@ -316,6 +317,28 @@ MonoBehaviour:
   targetOpenXRApiVersion: 
   required: 0
   customRuntimeLoaderName: 
+--- !u!114 &-5010318926085252685
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61726edca15cc5c4d8faab9a8a3b58c0, type: 3}
+  m_Name: AkWwiseOpenXRMotionFeature Android
+  m_EditorClassIdentifier: AK.Wwise.Unity.OpenXR::AK.Wwise.Unity.OpenXR.AkWwiseOpenXRMotionFeature
+  m_enabled: 0
+  nameUi: Wwise OpenXR Motion
+  version: 1.0.0
+  featureIdInternal: com.audiokinetic.wwise.openxr.motion
+  openxrExtensionStrings: XR_FB_haptic_pcm
+  company: Audiokinetic
+  priority: 0
+  targetOpenXRApiVersion: 
+  required: 0
+  customRuntimeLoaderName: 
 --- !u!114 &-4911389550664953725
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -356,6 +379,28 @@ MonoBehaviour:
   featureIdInternal: com.unity.openxr.feature.input.metaquestplus
   openxrExtensionStrings: XR_META_touch_controller_plus
   company: Unity
+  priority: 0
+  targetOpenXRApiVersion: 
+  required: 0
+  customRuntimeLoaderName: 
+--- !u!114 &-3568433431716766845
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61726edca15cc5c4d8faab9a8a3b58c0, type: 3}
+  m_Name: AkWwiseOpenXRMotionFeature Standalone
+  m_EditorClassIdentifier: AK.Wwise.Unity.OpenXR::AK.Wwise.Unity.OpenXR.AkWwiseOpenXRMotionFeature
+  m_enabled: 0
+  nameUi: Wwise OpenXR Motion
+  version: 1.0.0
+  featureIdInternal: com.audiokinetic.wwise.openxr.motion
+  openxrExtensionStrings: XR_FB_haptic_pcm
+  company: Audiokinetic
   priority: 0
   targetOpenXRApiVersion: 
   required: 0
@@ -1325,6 +1370,7 @@ MonoBehaviour:
   - {fileID: -7017867156667353740}
   - {fileID: 6703738205016432814}
   - {fileID: 8980065879302701252}
+  - {fileID: -5010318926085252685}
   - {fileID: 6196070954480770237}
   customLoaderName: 
   m_renderMode: 1

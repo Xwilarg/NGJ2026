@@ -11,6 +11,7 @@ namespace NGJ2026.Player
         private Vector3 _lastRefPoint;
         [SerializeField]
         private Transform _velRefPoint;
+        public float sumVelocity;
 
         private readonly List<FloatDT> _velocities = new();
 
@@ -32,6 +33,8 @@ namespace NGJ2026.Player
             _velocities.Add(new() { Time = Time.unscaledTime, Value = (_velRefPoint.position - _lastRefPoint).magnitude });
 
             _velocities.RemoveAll(x => Time.unscaledTime - x.Time > 1f);
+
+            sumVelocity = GetSumVelocity();
         }
 
         public float GetSumVelocity()
