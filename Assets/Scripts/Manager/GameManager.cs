@@ -56,7 +56,8 @@ namespace NGJ2026.Manager
         public bool IsScorePanelOpen => _submitPanel.activeInHierarchy;
         public bool IsLastLevel => CurrentLevel.IsSpawningContinue;
 
-        private bool _reachedGameHalf = false;
+        public bool ReachedGameHalf { private set; get; } = false;
+        public bool ReachedGameTwoThird { private set; get; } = false;
 
         public Level CurrentLevel => _levelIndex >= Info.Levels.Length ? Info.Levels.Last() : Info.Levels[_levelIndex];
 
@@ -91,7 +92,8 @@ namespace NGJ2026.Manager
 
             OnGameReset.AddListener(() =>
             {
-                _reachedGameHalf = false;
+                ReachedGameHalf = false;
+                ReachedGameTwoThird = false;
                 _levelIndex = 0;
                 if (PersistencyManager<SaveData>.Instance.SaveData.IsInLeaderboard(InsectManager.Instance.ButterflyCaught))
                 {
@@ -162,10 +164,14 @@ namespace NGJ2026.Manager
         {
             _gameTimer.Update(Time.deltaTime);
 
-            if (!_reachedGameHalf && _gameTimer.TimerClamped01 >= .5f)
+            if (!ReachedGameHalf && _gameTimer.TimerClamped01 >= .5f)
             {
-                _reachedGameHalf = true;
-                InsectManager.Instance.SpawnButterfly();
+                ReachedGameHalf = true;
+                if (IsLastLevel) InsectManager.Instance.SpawnButterfly();
+            }
+            if (!ReachedGameTwoThird && _gameTimer.TimerClamped01 >= .75f)
+            {
+                ReachedGameTwoThird = true;
             }
 
             UpdateUI();
