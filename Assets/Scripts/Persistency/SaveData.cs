@@ -39,7 +39,7 @@ namespace NGJ2026.Persistency
                     return i + 1;
                 }
             }
-            return i; // Shouldn't happen
+            return i + 1; // Shouldn't happen
         }
     }
 
