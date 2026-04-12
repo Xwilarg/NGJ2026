@@ -9,14 +9,25 @@
     "score_name_hint": "Teamnaam",
     "score_submit": "Verzenden",
     "score_skip": "Overslaan",
+    "score_rank": "Je hebt de {0} plaats behaald",
+    "score_1": "ste",
+    "score_2": "de",
+    "score_3": "de",
+    "score_4": "de",
 
     "leaderboard_title": "Beste scores",
     "leaderboard_format": "{0}: {1}",
 
-    "help_you": "You",
-    "help_friend": "Friend",
+    "game_start": "Druk op 'spatiebalk' om te starten",
+    "catch_me": "Vang me!",
 
-    "game_start": "Druk op 'spatiebalk' om het spel te starten`",
+    "help_1": "Hoi geest! Je menselijke vriend in VR kan de vlinders niet zien.",
+    "help_2": "Help hem om zoveel mogelijk te vangen binnen het tijdslimiet!",
+
+    "help_you": "Jij",
+    "help_friend": "Vriend",
+
+    "vr_plug": "Sluit je VR-headset aan",
 
     "credits_font": "Font Cherry Bomb One under the SIL Open Font License, Version 1.1"
 }

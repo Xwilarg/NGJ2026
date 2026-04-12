@@ -9,6 +9,8 @@ using System.Text;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 namespace NGJ2026.Manager
 {
@@ -188,6 +190,14 @@ namespace NGJ2026.Manager
             var remaining = Info.GameDuration - _gameTimer.TimerClamped;
             _statDisplay.text = $"{Translate.Instance.Tr("stat_timer", Mathf.FloorToInt(remaining / 60f).ToString("00"), (remaining % 60).ToString("00"))}\n{Translate.Instance.Tr("stat_score", InsectManager.Instance.ButterflyCaught.ToString())}";
             _timerDisplay.text = $"{Mathf.FloorToInt(remaining / 60f):00}:{remaining % 60:00}";
+        }
+
+        public void OnReset(InputAction.CallbackContext value)
+        {
+            if (value.phase == InputActionPhase.Started)
+            {
+                SceneManager.LoadScene("Main");
+            }
         }
     }
 }

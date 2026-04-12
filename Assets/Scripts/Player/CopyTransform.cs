@@ -4,7 +4,7 @@ public class CopyTransform : MonoBehaviour
 {
     private Vector3 _originPoint;
     private Quaternion _originRot;
-    private bool _followPlayer;
+    private FollowState _followState;
 
     private float _timer;
 
@@ -16,13 +16,20 @@ public class CopyTransform : MonoBehaviour
 
     public void StartFollowingPlayer()
     {
-        _followPlayer = true;
+        _followState = FollowState.FollowDestination;
+        _timer = 0f;
+    }
+
+    public void StartFollowingOrigin()
+    {
+        _followState = FollowState.FollowOrigin;
+        _timer = 0f;
     }
 
     public Transform target;
     void Update() {
 
-        if (_followPlayer)
+        if (_followState != FollowState.Disabled)
         {
             if (_timer < 1f)
             {
@@ -30,10 +37,26 @@ public class CopyTransform : MonoBehaviour
                 if (_timer >= 1f) _timer = 1f;
             }
 
-            transform.position = Vector3.Slerp(_originPoint, target.position, _timer);
             var rot = target.eulerAngles;
             rot.z = 0;
-            transform.rotation = Quaternion.Lerp(_originRot, Quaternion.Euler(rot), _timer);
+
+            if (_followState == FollowState.FollowDestination)
+            {
+                transform.position = Vector3.Slerp(_originPoint, target.position, _timer);
+                transform.rotation = Quaternion.Lerp(_originRot, Quaternion.Euler(rot), _timer);
+            }
+            else
+            {
+                transform.position = Vector3.Slerp(target.position, _originPoint, _timer);
+                transform.rotation = Quaternion.Lerp(Quaternion.Euler(rot), _originRot, _timer);
+            }
         }
+    }
+
+    public enum FollowState
+    {
+        Disabled,
+        FollowDestination,
+        FollowOrigin
     }
 }
