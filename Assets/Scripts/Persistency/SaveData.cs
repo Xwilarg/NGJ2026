@@ -31,14 +31,15 @@ namespace NGJ2026.Persistency
 
         public int GetPlace(int value)
         {
-            for (int i = 0; i < BestScores.Count; i++)
+            int i = 0;
+            for (; i < BestScores.Count; i++)
             {
                 if (value > BestScores[i].Value)
                 {
                     return i + 1;
                 }
             }
-            return -1; // Shouldn't happen
+            return i; // Shouldn't happen
         }
     }
 
