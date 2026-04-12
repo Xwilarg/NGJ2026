@@ -24,6 +24,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ButterflyGhost Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 1828258544336287036, guid: 39788db60c1e19d4c8d272ddd9628041, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1917938052866132740, guid: 39788db60c1e19d4c8d272ddd9628041, type: 3}
       propertyPath: m_Layer
       value: 0
@@ -108,6 +112,10 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[1]'
       value: 
       objectReference: {fileID: 2100000, guid: 7f5e3e8c001c34f4ab419c6fe0523178, type: 2}
+    - target: {fileID: 7355558881666716399, guid: 39788db60c1e19d4c8d272ddd9628041, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7686795152467794919, guid: 39788db60c1e19d4c8d272ddd9628041, type: 3}
       propertyPath: _owner
       value: 
