@@ -15,7 +15,7 @@ namespace NGJ2026.Manager
         
         private void Awake()
         {
-            Translate.Instance.SetLanguages(new string[] { "english", "french", "dutch", "spanish" });
+            Translate.Instance.SetLanguages(new string[] { "english", "french", "dutch", "spanish", "german" });
 
             _settingsMenu.SetActive(false);
         }
@@ -30,6 +30,7 @@ namespace NGJ2026.Manager
         public void SetFrenchLanguage() => Translate.Instance.CurrentLanguage = "french";
         public void SetDutchLanguage() => Translate.Instance.CurrentLanguage = "dutch";
         public void SetSpanishLanguage() => Translate.Instance.CurrentLanguage = "spanish";
+        public void SetGermanLanguage() => Translate.Instance.CurrentLanguage = "german";
 
         public void ResetGame()
         {
